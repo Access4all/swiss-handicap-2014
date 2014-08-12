@@ -1,0 +1,32 @@
+nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to 'Handicap Simulator', '/', class: 'navbar-brand'
+
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          = link_to do
+            span.badge 1
+            |&nbsp;Blindheit
+        li
+          = link_to do
+            span.badge 2
+            |&nbsp;Paraplegie
+        li
+          = link_to do
+            span.badge 3
+            |&nbsp;Tremor
+        li
+          = link_to do
+            span.badge 4
+            |&nbsp;Farbenblindheit
+        li = link_to 'Resultate'
+
+      ul.nav.navbar-nav.navbar-right
+        li = link_to 'Swiss Handicap 2014'
