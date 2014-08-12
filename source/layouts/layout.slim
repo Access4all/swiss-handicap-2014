@@ -9,7 +9,41 @@ html
   
   body class=page_classes
     header
-      = partial 'navigation'
+      nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
+        .container
+          .navbar-header
+            button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-collapse"
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand href="/" class=nav_active('index')
+              .fa.fa-wheelchair
+              |&nbsp;Handicap Simulator
+
+          .collapse.navbar-collapse
+            ul.nav.navbar-nav
+              li class=nav_active('blindheit')
+                = link_to 'blindheit.html' do
+                  .fa.fa-eye-slash
+                  |&nbsp;Blindheit
+              li
+                = link_to do
+                  .fa.fa-wheelchair
+                  |&nbsp;Paraplegie
+              li
+                = link_to do
+                  .fa.fa-arrows
+                  |&nbsp;Tremor
+              li
+                = link_to do
+                  .fa.fa-photo
+                  |&nbsp;Farbenblindheit
+              li = link_to 'Resultate'
+
+            ul.nav.navbar-nav.navbar-right
+              li = link_to do
+                | Zugang für alle
 
     main.container[role="main"]
       .row
