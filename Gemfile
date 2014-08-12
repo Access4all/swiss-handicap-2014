@@ -15,4 +15,6 @@ gem "tzinfo-data", platforms: [:mswin, :mingw]
 
 gem 'slim' # Use Slim template language
 
-gem 'bootstrap-sass', require: false
+gem 'bootstrap-sass', require: false # Use Bootstrap for rapid prototyping
+
+gem 'jquery-middleman' # Use jQuery
