@@ -19,27 +19,28 @@ html
               span.icon-bar
             a.navbar-brand href="/" class=nav_active('index')
               .fa.fa-wheelchair
-              |&nbsp;Handicap Simulator
+              | &nbsp;Handicap Simulator
 
           .collapse.navbar-collapse
             ul.nav.navbar-nav
               li class=nav_active('blindheit')
                 = link_to 'blindheit.html' do
                   .fa.fa-eye-slash
-                  |&nbsp;Blindheit
-              li
+                  | &nbsp;Blindheit
+              li class=nav_active('paraplegie')
                 = link_to do
                   .fa.fa-wheelchair
-                  |&nbsp;Paraplegie
-              li
+                  | &nbsp;Paraplegie
+              li class=nav_active('tremor')
                 = link_to do
                   .fa.fa-arrows
-                  |&nbsp;Tremor
-              li
+                  | &nbsp;Tremor
+              li class=nav_active('farbenblindheit')
                 = link_to do
                   .fa.fa-photo
-                  |&nbsp;Farbenblindheit
-              li = link_to 'Resultate'
+                  | &nbsp;Farbenblindheit
+              li class=nav_active('resultate')
+                = link_to 'Resultate'
 
             ul.nav.navbar-nav.navbar-right
               li = link_to do
