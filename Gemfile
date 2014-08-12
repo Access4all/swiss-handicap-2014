@@ -14,3 +14,5 @@ gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
 gem "tzinfo-data", platforms: [:mswin, :mingw]
 
 gem 'slim' # Use Slim template language
+
+gem 'bootstrap-sass', require: false
