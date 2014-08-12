@@ -18,3 +18,5 @@ gem 'slim' # Use Slim template language
 gem 'bootstrap-sass', require: false # Use Bootstrap for rapid prototyping
 
 gem 'jquery-middleman' # Use jQuery
+
+gem 'font-awesome-middleman' # Use FontAwesome

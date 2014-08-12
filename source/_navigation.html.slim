@@ -6,25 +6,27 @@ nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      = link_to 'Handicap Simulator', '/', class: 'navbar-brand'
+      a href="/" class="navbar-brand"
+        .fa.fa-wheelchair
+        |&nbsp;Handicap Simulator
 
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         li
           = link_to do
-            span.badge 1
+            .fa.fa-eye-slash
             |&nbsp;Blindheit
         li
           = link_to do
-            span.badge 2
+            .fa.fa-wheelchair
             |&nbsp;Paraplegie
         li
           = link_to do
-            span.badge 3
+            .fa.fa-arrows
             |&nbsp;Tremor
         li
           = link_to do
-            span.badge 4
+            .fa.fa-photo
             |&nbsp;Farbenblindheit
         li = link_to 'Resultate'
 
