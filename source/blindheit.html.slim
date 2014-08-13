@@ -9,7 +9,7 @@ p Blinde (oder stark sehgeschwächte) Menschen surfen mittels eines Screenreader
     h2 Aufgabe
 
     p
-      | Wenn Sie auf den unten stehenden Abspielen-Knopf (&nbsp;
+      | Wenn Sie auf den Abspielen-Knopf (&nbsp;
       span.fa.fa-play
       | &nbsp;) drücken, wird eine Audio-Datei mit der zuvor aufgenommenen Ausgabe eines Screenreaders abgespielt.
 
@@ -19,54 +19,69 @@ p Blinde (oder stark sehgeschwächte) Menschen surfen mittels eines Screenreader
 
     p Sie haben drei Versuche, wobei die Vorlesegeschwindigkeit bei jedem Versuch reduziert wird.
 
-    .alert.alert-default
-      .row
-        .col-md-6
-          a.btn.btn-info.btn-lg href="blindheit.html"
-            span.fa.fa-play
-            | &nbsp;Abspielen
+    .controls
+      button.btn.btn-danger.btn-lg data-target="#contest" data-toggle="modal"
+        span.fa.fa-play
+        | &nbsp;Zur Simulation
 
-          .progress
-            .progress-bar.progress-bar-info.progress-bar-striped.active style="width: 20%"
-              | 20% Complete
+    #contest.modal.fade tabindex="-1"
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close data-dismiss="modal" type="button"
+            h4#modal-title Um welche berühmte Persönlichkeit handelt es sich?
 
-        .col-md-6
-          table.table.table-bordered
-            tbody
-              tr
-                th Versuchsnummer
-                td
-                  .badge.alert-success 1 von 3
+          .modal-body
+            .row
+              .col-md-6
+                a.btn.btn-info.btn-lg href="blindheit.html"
+                  span.fa.fa-play
+                  | &nbsp;Abspielen
 
-              tr
-                th Aktuelle Geschwindigkeit
-                td Schnell
+                .progress
+                  .progress-bar.progress-bar-info.progress-bar-striped.active style="width: 20%"
+                    | 20% Complete
 
-      .row
-        .col-md-12
-          h3 Mögliche Antworten
+              .col-md-6
+                table.table.table-bordered
+                  tbody
+                    tr
+                      th Versuchsnummer
+                      td
+                        .badge.alert-success 1 von 3
 
-          form role="form"
-              .radio
-                label
-                  input type="radio"
-                    | Albert Einstein, Begründer der Relativitätstheorie
-              .radio
-                label
-                  input type="radio"
-                    | Mutter Theresa, ...
-              .radio
-                label
-                  input type="radio"
-                    | Mahatma Gandhi, ...
-              .radio
-                label
-                  input type="radio"
-                    | Bruder Klaus, ...
-              .radio
-                label
-                  input type="radio"
-                    | Hildegard von Bingen, ...
+                    tr
+                      th Aktuelle Geschwindigkeit
+                      td Schnell
+
+            .row
+              .col-md-12
+                h3 Mögliche Antworten
+
+                form role="form"
+                    .radio
+                      label
+                        input type="radio"
+                          | Albert Einstein, Begründer der Relativitätstheorie
+                    .radio
+                      label
+                        input type="radio"
+                          | Mutter Theresa, ...
+                    .radio
+                      label
+                        input type="radio"
+                          | Mahatma Gandhi, ...
+                    .radio
+                      label
+                        input type="radio"
+                          | Bruder Klaus, ...
+                    .radio
+                      label
+                        input type="radio"
+                          | Hildegard von Bingen, ...
+
+          .modal-footer
+            a.btn.btn-danger href="paraplegie.html" Weiter zu Simulation 2
 
   .col-md-4
     .well
@@ -83,7 +98,3 @@ p Blinde (oder stark sehgeschwächte) Menschen surfen mittels eines Screenreader
             li davon ??% unter 30 Jahren
             li davon ??% über 60 Jahren
 
-.controls
-  a.btn.btn-danger.btn-lg href="blindheit.html"
-    span.fa.fa-forward
-    | &nbsp;Zur nächsten Aufgabe

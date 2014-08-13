@@ -1,0 +1,72 @@
+h1
+  .fa.fa-wheelchair
+  | &nbsp;Simulation 2: Paraplegie
+
+p Paraplegiker sind oft auf einen Mundstab angewiesen, um einen Computer zu bedienen. Auch wenn dies unendlich mühsam zu sein scheint, so bietet es doch eine unvorstellbar wertvolle Möglichkeit, um mit der Welt zu kommunizieren und einen minimalen Grad an Selbstbestimmtheit zu bewahren.
+
+.row
+  .col-md-8
+    h2 Aufgabe
+
+    p Geben Sie im unten stehenden Formular Kontaktdaten ein.
+
+    p
+      | Seien Sie pflichtbewusst: die Daten werden verwendet, um Ihnen im Falle eines Gewinnes das iPad zu zu stellen!&nbsp;
+      span.fa.fa-smile-o
+
+    .controls
+      button.btn.btn-danger.btn-lg data-target="#contest" data-toggle="modal"
+        span.fa.fa-play
+        | &nbsp;Zur Simulation
+
+    #contest.modal.fade tabindex="-1"
+      .modal-dialog
+        form.modal-content action="tremor.html"
+          .modal-header
+            button.close data-dismiss="modal" type="button"
+            h4#modal-title
+              .fa.fa-wheelchair
+              | &nbsp;Geben Sie Ihre Kontaktdetails mit einem Mundstab ein!
+
+          .modal-body
+            .form-horizontal
+              .form-group
+                label.col-sm-3.control-label for="given" Vorname
+                .col-sm-7
+                  input#given.form-control type="text" required="required"
+              .form-group
+                label.col-sm-3.control-label for="family" Nachname
+                .col-sm-7
+                  input#family.form-control type="text" required="required"
+              .form-group
+                label.col-sm-3.control-label for="phone" Telefon
+                .col-sm-7
+                  input#phone.form-control type="phone" required="required"
+              .form-group
+                label.col-sm-3.control-label for="email" E-Mail
+                .col-sm-7
+                  input#email.form-control type="email" required="required"
+              .form-group
+                .col-sm-offset-3.col-sm-7
+                  .checkbox
+                    label
+                      input type="checkbox" required="required"
+                        | Ja, ich möchte ein iPad gewinnen!
+
+          .modal-footer
+            button.btn.btn-danger type="submit" Weiter zu Simulation 2
+
+  .col-md-4
+    .well
+      h2
+        .fa.fa-list-alt
+        | &nbsp;Fakten
+
+      ul
+        li ??% der Menschen sind blind
+        li
+          | ??% der Menschen sind stark sehbehindert
+
+          ul
+            li davon ??% unter 30 Jahren
+            li davon ??% über 60 Jahren
