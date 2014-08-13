@@ -2,11 +2,6 @@ h1 Willkommen zum Handicap Simulator!
 
 p In den folgenden Minuten erhalten Sie einen Eindruck davon, wie es für Menschen mit körperlichen Einschränkungen ist, im Internet zu surfen.
 
-.alert.alert-success
-  .fa.fa-smile-o
-  .fa.fa-smile-o
-  | Wenn Sie alle vier Aufgaben korrekt lösen, erfahren Sie das Lösungswort, mit welchem Sie ein iPad gewinnen können!
-
 .row
   .col-md-6
     .well
@@ -38,6 +33,26 @@ p In den folgenden Minuten erhalten Sie einen Eindruck davon, wie es für Mensch
       p Steht die Ampel auf grün oder rot? Farbenblindheit bringt viele Schwierigkeiten mit sich, auch im Internet.
 
 .controls
-  a.btn.btn-danger.btn-lg href="blindheit.html"
+  button.btn.btn-danger.btn-lg data-target="#contest" data-toggle="modal"
     span.fa.fa-play
-    | &nbsp;Simulator starten
+    | &nbsp;Simulation starten
+
+#contest.modal.fade tabindex="-1"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close data-dismiss="modal" type="button"
+        h4#modal-title Gewinnen Sie ein iPad!
+
+      .modal-body
+        .row
+          .col-md-7
+            p Nehmen Sie Ihre Chance wahr, und gewinnen Sie!
+            p Wenn Sie alle vier Aufgaben korrekt lösen, erfahren Sie das gesuchte Lösungswort. Melden Sie sich nach Ende der Simulation bei uns, um bei der Verlosung Teil zu nehmen.
+            p Viel Glück!
+
+          .col-md-5
+            = image_tag 'ipad.jpg'
+
+      .modal-footer
+        a.btn.btn-danger href="blindheit.html" Weiter zu Simulation 1
