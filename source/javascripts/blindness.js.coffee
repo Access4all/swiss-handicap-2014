@@ -12,6 +12,12 @@ class BlindnessViewModel
     @playAudio = ->
       @audioPlayer.play()
 
+    @currentAttempt = ->
+      @audioPlayer.currentAudioId() + 1
+
+    @totalAttempts = ->
+      @audioPlayer.audios.length
+
     @answer = (value) =>
       if value.correct
         console.log 'true! congratulations!'
@@ -30,21 +36,21 @@ class AudioPlayer
       'audios/slow.mp3'
     ]
 
-    @currentAudioId = -1
+    @currentAudioId = ko.observable(-1)
 
     @currentAudio = ->
-      @audios[@currentAudioId]
+      @audios[@currentAudioId()]
 
     @play = ->
       @player.play()
 
     @hasNext = ->
-      @currentAudioId + 1 < @audios.length
+      @currentAudioId() + 1 < @audios.length
 
     @next = ->
-      console.error 'There is not next audio!' unless @hasNext
+      console.error 'There is no next audio!' unless @hasNext
 
-      @currentAudioId += 1
+      @currentAudioId(@currentAudioId() + 1)
       @player = new Audio(@currentAudio())
 
     @next()

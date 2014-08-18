@@ -48,7 +48,10 @@ p Blinde (oder stark sehgeschwächte) Menschen surfen mittels eines Screenreader
                     tr
                       th Versuchsnummer
                       td
-                        .badge.alert-success 1 von 3
+                        .badge.alert-success
+                          <!--ko text: currentAttempt()--><!--/ko-->
+                          |&nbsp;von&nbsp;
+                          <!--ko text: totalAttempts()--><!--/ko-->
 
                     tr
                       th Aktuelle Geschwindigkeit
