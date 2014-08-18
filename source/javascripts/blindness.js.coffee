@@ -1,7 +1,5 @@
 class BlindnessViewModel
   constructor: ->
-    @audioPlayer = new AudioPlayer
-
     @answers = [
       {value: 'Mahatma Gandhi',       correct: false},
       {value: 'Mutter Teresa',        correct: false},
@@ -10,29 +8,26 @@ class BlindnessViewModel
     ]
 
     @playAudio = ->
-      @audioPlayer.play()
-      @chooseAnswer(true)
+      @play()
 
     @currentAttempt = ->
-      @audioPlayer.currentAudioId() + 1
+      @currentAudioId() + 1
 
     @totalAttempts = ->
-      @audioPlayer.audios.length
+      @audios.length
 
     @answer = (value) =>
       if value.correct
-        console.log 'true! congratulations!'
+        alert "Gewonnen!"
       else
-        if @audioPlayer.hasNext()
-          @audioPlayer.next()
-          console.log "leider falsch, nächster versucht #{@audioPlayer.currentAudio()}"
+        if @hasNext()
+          alert "Leider falsch. Versuchen Sie es noch einmal; die Geschwindigkeit wird gedrosselt."
+          @next()
         else
-          console.log 'verloren!'
+          alert "Leider verloren!"
 
     @chooseAnswer = ko.observable(false)
 
-class AudioPlayer
-  constructor: ->
     @audios = [
       'audios/fast.mp3',
       'audios/medium.mp3',
@@ -56,8 +51,9 @@ class AudioPlayer
       @currentAudioId(@currentAudioId() + 1)
       @player = new Audio(@currentAudio())
 
-      @player.addEventListener 'ended', (->
-        alert 123
+      @chooseAnswer(false)
+      @player.addEventListener 'ended', (=>
+        @chooseAnswer(true)
       ), false
 
     @next()

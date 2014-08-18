@@ -34,7 +34,7 @@ p Blinde (oder stark sehgeschwächte) Menschen surfen mittels eines Screenreader
           .modal-body
             .row
               .col-md-6
-                button.btn.btn-info.btn-lg type="button" href="blindness.html" data-bind="click: playAudio, disabled: chooseAnswer"
+                button.btn.btn-info.btn-lg type="button" href="blindness.html" data-bind="click: playAudio, disable: chooseAnswer"
                   span.fa.fa-play
                   | &nbsp;Abspielen
 
@@ -61,9 +61,8 @@ p Blinde (oder stark sehgeschwächte) Menschen surfen mittels eines Screenreader
               .col-md-12
                 h3 Mögliche Antworten
 
-                ul data-bind="foreach: answers"
-                  li
-                    a.btn.btn-success data-bind="text: $data.value, click: $root.answer"
+                .answers data-bind="foreach: answers"
+                  a.btn.btn-info data-bind="text: $data.value, click: $root.answer"
 
           .modal-footer
             a.btn.btn-danger href="paraplegia.html" Weiter zu Simulation 2
