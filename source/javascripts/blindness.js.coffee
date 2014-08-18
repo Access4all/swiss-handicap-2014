@@ -11,6 +11,7 @@ class BlindnessViewModel
 
     @playAudio = ->
       @audioPlayer.play()
+      @chooseAnswer(true)
 
     @currentAttempt = ->
       @audioPlayer.currentAudioId() + 1
@@ -27,6 +28,8 @@ class BlindnessViewModel
           console.log "leider falsch, nächster versucht #{@audioPlayer.currentAudio()}"
         else
           console.log 'verloren!'
+
+    @chooseAnswer = ko.observable(false)
 
 class AudioPlayer
   constructor: ->
@@ -52,6 +55,10 @@ class AudioPlayer
 
       @currentAudioId(@currentAudioId() + 1)
       @player = new Audio(@currentAudio())
+
+      @player.addEventListener 'ended', (->
+        alert 123
+      ), false
 
     @next()
 

@@ -24,17 +24,17 @@ p Blinde (oder stark sehgeschwächte) Menschen surfen mittels eines Screenreader
         span.fa.fa-play
         | &nbsp;Zur Simulation
 
-    #contest.modal2.fade2 tabindex="-1"
+    #contest.modal.fade tabindex="-1"
       .modal-dialog
         .modal-content
           .modal-header
             button.close data-dismiss="modal" type="button"
             h4#modal-title Um welche berühmte Persönlichkeit handelt es sich?
 
-          .modal-body2z
+          .modal-body
             .row
               .col-md-6
-                a.btn.btn-info.btn-lg href="blindness.html" data-bind="click: playAudio"
+                button.btn.btn-info.btn-lg type="button" href="blindness.html" data-bind="click: playAudio, disabled: chooseAnswer"
                   span.fa.fa-play
                   | &nbsp;Abspielen
 
@@ -57,15 +57,13 @@ p Blinde (oder stark sehgeschwächte) Menschen surfen mittels eines Screenreader
                       th Aktuelle Geschwindigkeit
                       td Schnell
 
-            .row
+            .row data-bind="visible: chooseAnswer"
               .col-md-12
                 h3 Mögliche Antworten
 
-                form role="form" data-bind="foreach: answers"
-                  .radio
-                    label
-                      input type="radio" name="answer" data-bind="value: $data.value, click: $root.answer"
-                      <!--ko text: $data.value--><!--/ko-->
+                ul data-bind="foreach: answers"
+                  li
+                    a.btn.btn-success data-bind="text: $data.value, click: $root.answer"
 
           .modal-footer
             a.btn.btn-danger href="paraplegia.html" Weiter zu Simulation 2
