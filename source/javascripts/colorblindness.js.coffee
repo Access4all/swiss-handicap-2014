@@ -17,6 +17,4 @@ $ ->
     ko.applyBindings new ColorblindnessViewModel
 
   $('#task_colorblindness').on 'shown.bs.modal', (e) ->
-    setTimeout (->
-      $('body').addClass('grayscale')
-    ), 2000
+    $('body').addClass('grayscale')
