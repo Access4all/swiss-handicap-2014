@@ -2,3 +2,4 @@
 //= require bootstrap
 
 //= require blindness
+//= require colorblindness
