@@ -8,15 +8,14 @@ p Paraplegiker sind oft auf einen Mundstab angewiesen, um einen Computer zu bedi
   .col-md-8
     h2 Aufgabe
 
-    p Geben Sie im unten stehenden Formular Kontaktdaten ein.
+    p Geben Sie eine Webadresse fehlerlos ein (so wie Sie es beim Surfen im Internet häufig tun).
 
     .alert.alert-success
       strong Das Ziel:
-      | &nbsp;Geben Sie Ihre Daten korrekt ein, inkl. der geforderten Sonderzeichen!
+      | &nbsp;Geben Sie im unten stehenden Formular <code>www.postfinance.ch</code> ein!
 
     p
-      | Seien Sie pflichtbewusst: die Daten werden verwendet, um Ihnen im Falle eines Gewinnes das iPad zu zu stellen!&nbsp;
-      span.fa.fa-smile-o
+      | Sobald die Eingabe korrekt ist und Sie den "Abschicken" Button geklickt haben, erfahren Sie das Lösungswort.
 
     .controls
       button.btn.btn-danger.btn-lg data-target="#contest" data-toggle="modal"
@@ -30,35 +29,17 @@ p Paraplegiker sind oft auf einen Mundstab angewiesen, um einen Computer zu bedi
             button.close data-dismiss="modal" type="button"
             h4#modal-title
               .fa.fa-wheelchair
-              | &nbsp;Geben Sie Ihre Kontaktdetails mit einem Mundstab ein!
+              | &nbsp;Geben Sie <code>www.postfinance.ch</code> mit einem Mundstab ein!
 
           .modal-body
             .form-horizontal
               .form-group
-                label.col-sm-3.control-label for="given" Vorname
+                label.col-sm-3.control-label for="address" Webadresse
                 .col-sm-7
-                  input#given.form-control type="text" required="required"
-              .form-group
-                label.col-sm-3.control-label for="family" Nachname
-                .col-sm-7
-                  input#family.form-control type="text" required="required"
-              .form-group
-                label.col-sm-3.control-label for="phone" Telefon
-                .col-sm-7
-                  input#phone.form-control type="phone" required="required"
-              .form-group
-                label.col-sm-3.control-label for="email" E-Mail
-                .col-sm-7
-                  input#email.form-control type="email" required="required"
-              .form-group
-                .col-sm-offset-3.col-sm-7
-                  .checkbox
-                    label
-                      input type="checkbox" required="required"
-                        | Ja, ich möchte ein iPad gewinnen!
+                  input#address.form-control type="text" pattern="www.postfinance.ch" required="required" value=""
 
           .modal-footer
-            button.btn.btn-danger type="submit" Weiter zu Simulation 2
+            button.btn.btn-danger type="submit" Abschicken
 
   .col-md-4
     .well
