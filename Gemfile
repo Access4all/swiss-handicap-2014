@@ -22,3 +22,5 @@ gem 'jquery-middleman' # Use jQuery
 gem 'font-awesome-middleman' # Use FontAwesome
 
 gem 'middleman-pry' # Use pry instead of built-in console
+
+gem 'middleman-deploy' # Deploy a middleman built site over rsync, ftp, stfp, or git
