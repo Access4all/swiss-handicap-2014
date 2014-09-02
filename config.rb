@@ -39,7 +39,10 @@ require 'pry'
 
 # Reload the browser automatically whenever files change
 configure :development do
-  activate :livereload
+  activate :livereload do |livereload|
+    # http://forum.middlemanapp.com/t/howto-livereload-on-mobiles-tablets/1244
+    livereload.host = Socket.ip_address_list.detect{ |intf| intf.ipv4_private? }.ip_address
+  end
 end
 
 # Methods defined in the helpers block are available in templates
