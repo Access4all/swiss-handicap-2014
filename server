@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# This starts middleman using rerun which automatically restarts it after config.rb is changed
+rerun --pattern '{config.rb}' --no-growl --background --clear -- middleman -p 4568
