@@ -19,53 +19,9 @@ p Blinde (oder stark sehgeschwächte) Menschen surfen mittels eines Screenreader
 
     p Sie haben drei Versuche, wobei die Vorlesegeschwindigkeit bei jedem Versuch reduziert wird.
 
-    .controls
-      button.btn.btn-danger.btn-lg data-target="#contest" data-toggle="modal"
-        span.fa.fa-play
-        | &nbsp;Zur Simulation
+    = render_partial 'blindness_simulation'
 
-    #contest.modal.fade tabindex="-1"
-      .modal-dialog
-        .modal-content
-          .modal-header
-            button.close data-dismiss="modal" type="button"
-            h4#modal-title Um welche berühmte Persönlichkeit handelt es sich?
-
-          .modal-body
-            .row
-              .col-md-6
-                button.btn.btn-info.btn-lg type="button" href="blindness.html" data-bind="click: playAudio, disable: chooseAnswer"
-                  span.fa.fa-play
-                  | &nbsp;Abspielen
-
-                .progress
-                  .progress-bar.progress-bar-info.progress-bar-striped.active style="width: 20%"
-                    | 20% Complete
-
-              .col-md-6
-                table.table.table-bordered
-                  tbody
-                    tr
-                      th Versuchsnummer
-                      td
-                        .badge.alert-success
-                          <!--ko text: currentAttempt()--><!--/ko-->
-                          |&nbsp;von&nbsp;
-                          <!--ko text: totalAttempts()--><!--/ko-->
-
-                    tr
-                      th Aktuelle Geschwindigkeit
-                      td Schnell
-
-            .row data-bind="visible: chooseAnswer"
-              .col-md-12
-                h3 Mögliche Antworten
-
-                .answers data-bind="foreach: answers"
-                  a.btn.btn-info data-bind="text: $data.value, click: $root.answer"
-
-          .modal-footer
-            a.btn.btn-danger href="paraplegia.html" Weiter zu Simulation 2
+    = render_partial 'blindness_resolution'
 
   .col-md-4
     .well
@@ -81,4 +37,3 @@ p Blinde (oder stark sehgeschwächte) Menschen surfen mittels eines Screenreader
           ul
             li davon ??% unter 30 Jahren
             li davon ??% über 60 Jahren
-

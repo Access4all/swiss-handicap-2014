@@ -1,0 +1,42 @@
+.controls
+  button.btn.btn-danger.btn-lg data-target="#contest" data-toggle="modal"
+    span.fa.fa-play
+    | &nbsp;Zur Simulation
+
+#contest.modal.fade tabindex="-1" data-keyboard="false" data-backdrop="static"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close data-dismiss="modal" type="button"
+        h3#modal-title Um welche berühmte Persönlichkeit handelt es sich?
+
+      .modal-body
+        .row
+          .col-md-6
+            button.btn.btn-info.btn-lg type="button" href="blindness.html" data-bind="click: playAudio, disable: chooseAnswer"
+              span.fa.fa-play
+              | &nbsp;Abspielen
+
+          .col-md-6
+            table.table.table-bordered
+              tbody
+                tr
+                  th Versuchsnummer
+                  td
+                    .badge.alert-success
+                      <!--ko text: currentAttempt()--><!--/ko-->
+                      |&nbsp;von&nbsp;
+                      <!--ko text: totalAttempts()--><!--/ko-->
+
+                tr
+                  th Aktuelle Geschwindigkeit
+                  td data-bind="text: currentAudio()"
+
+        .row data-bind="visible: chooseAnswer"
+          .col-md-12
+            h4 Haben Sie die berühmte Persönlichkeit erkannt?
+
+            .controls
+              button.btn.btn-success.btn-lg data-target="#resolution" data-toggle="modal" Ja
+              button.btn.btn-danger.btn-lg data-bind="click: answer, visible: hasNext" Nein, nächster Versuch
+              button.btn.btn-danger.btn-lg data-bind="visible: !hasNext()" data-target="#resolution" data-toggle="modal" Nein, leider immer noch nicht
