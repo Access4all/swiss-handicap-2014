@@ -19,6 +19,11 @@ p Blinde (oder stark sehgeschwächte) Menschen surfen mittels eines Screenreader
 
     p Sie haben drei Versuche, wobei die Vorlesegeschwindigkeit bei jedem Versuch reduziert wird.
 
+    .controls
+      button.btn.btn-danger.btn-lg data-target="#contest" data-toggle="modal"
+        span.fa.fa-play
+        | &nbsp;Zur Simulation
+
     = render_partial 'blindness_simulation'
 
     = render_partial 'blindness_resolution'

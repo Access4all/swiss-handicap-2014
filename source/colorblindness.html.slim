@@ -36,88 +36,9 @@ p Nicht nur im Internet, sondern überall im Alltag stellen Hinweise, die nur fa
         span.fa.fa-play
         | &nbsp;Zur Simulation
 
-    #task_colorblindness.modal.fade tabindex="-1" data-keyboard="false" data-backdrop="static"
-      .modal-dialog
-        form.modal-content action="/"
-          .modal-header
-            button.close data-dismiss="modal" type="button"
-            h4#modal-title
-              .fa.fa-photo
-              | &nbsp;Wählen Sie an jedem Tag einen freien Termin aus!
+    = render_partial 'colorblindness_simulation'
 
-          .modal-body
-            p
-              | Klicken Sie auf einen freien Termin (
-              em.free grün
-              |), um ihn anzuwählen.
-
-            table.table.table-bordered
-              thead
-                tr
-                  th
-                  th 9:00
-                  th 10:00
-                  th 11:00
-                  th 13:00
-                  th 14:00
-                  th 15:00
-                  th 16:00
-                  th 17:00
-
-              tbody
-                tr
-                  th Montag
-                  td.occupied
-                  td
-                  td.occupied
-                  td
-                  td
-                  td.occupied
-                  td.not_available
-                  td.not_available
-                tr
-                  th Dienstag
-                  td
-                  td.occupied
-                  td.occupied
-                  td
-                  td
-                  td.occupied
-                  td
-                  td.occupied
-                tr
-                  th Mittwoch
-                  td.occupied
-                  td.not_available
-                  td
-                  td
-                  td.occupied
-                  td.not_available
-                  td.occupied
-                  td
-                tr
-                  th Donnerstag
-                  td
-                  td
-                  td.occupied
-                  td.occupied
-                  td.not_available
-                  td.occupied
-                  td
-                  td.not_available
-                tr
-                  th Freitag
-                  td
-                  td.occupied
-                  td.not_available
-                  td.occupied
-                  td
-                  td.occupied
-                  td
-                  td.not_available
-
-          .modal-footer
-            button.btn.btn-danger type="submit" Simulation beenden
+    = render_partial 'colorblindness_resolution'
 
   .col-md-4
     .well

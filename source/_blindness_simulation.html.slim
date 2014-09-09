@@ -1,8 +1,3 @@
-.controls
-  button.btn.btn-danger.btn-lg data-target="#contest" data-toggle="modal"
-    span.fa.fa-play
-    | &nbsp;Zur Simulation
-
 #contest.modal.fade tabindex="-1" data-keyboard="false" data-backdrop="static"
   .modal-dialog
     .modal-content
@@ -37,6 +32,6 @@
             h4 Haben Sie die berühmte Persönlichkeit erkannt?
 
             .controls
-              button.btn.btn-success.btn-lg data-target="#resolution" data-toggle="modal" Ja
+              button.btn.btn-success.btn-lg data-target="#resolution_blindness" data-toggle="modal" Ja
               button.btn.btn-danger.btn-lg data-bind="click: answer, visible: hasNext" Nein, nächster Versuch
-              button.btn.btn-danger.btn-lg data-bind="visible: !hasNext()" data-target="#resolution" data-toggle="modal" Nein, leider immer noch nicht
+              button.btn.btn-danger.btn-lg data-bind="visible: !hasNext()" data-target="#resolution_blindness" data-toggle="modal" Nein, leider immer noch nicht

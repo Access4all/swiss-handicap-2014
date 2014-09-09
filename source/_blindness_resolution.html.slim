@@ -1,4 +1,4 @@
-#resolution.modal.fade tabindex="-1" data-keyboard="false" data-backdrop="static"
+#resolution_blindness.modal.fade tabindex="-1" data-keyboard="false" data-backdrop="static"
   .modal-dialog
     .modal-content
       .modal-header
@@ -6,6 +6,10 @@
         h3#modal-title Auflösung: Louis Braille, Erfinder der Blindenschrift
 
       .modal-body
+        .row
+          .col-md-12
+            .alert.alert-success Notieren Sie "Braille" als Lösungswort!
+
         .row
           .col-md-8
             h4 Dieser Text wurde vorgelesen
@@ -19,7 +23,7 @@
             = image_tag 'braille.jpg'
 
         .row
-          .col-md-8
+          .col-md-12
             h4 Warum so schnell?
 
             markdown:
