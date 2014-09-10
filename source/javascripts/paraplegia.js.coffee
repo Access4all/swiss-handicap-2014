@@ -9,7 +9,7 @@ class ParaplegiaViewModel
       @address() == 'www.postfinance.ch'
 
     @inputOkay = =>
-      "www.postfinance.ch".search(@address()) == 0
+      "www.postfinance.ch".indexOf(@address()) == 0
 
 $ ->
   $('body.paraplegia').each ->

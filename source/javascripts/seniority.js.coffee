@@ -9,7 +9,7 @@ class SeniorityViewModel
       @resolution() == 'Barrierefreiheit'
 
     @inputOkay = =>
-      "Barrierefreiheit".search(@resolution()) == 0
+      "Barrierefreiheit".indexOf(@resolution()) == 0
 
 $ ->
   $('body.seniority').each ->
