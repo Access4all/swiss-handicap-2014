@@ -24,5 +24,5 @@ $ ->
   $('body.colorblindness').each ->
     ko.applyBindings new ColorblindnessViewModel
 
-  $('#task_colorblindness').on 'shown.bs.modal', (e) ->
+  $('#colorblindness_simulation').on 'shown.bs.modal', (e) ->
     $('body').addClass('grayscale')
