@@ -1,0 +1,30 @@
+#seniority_resolution.modal.fade tabindex="-1" data-keyboard="false" data-backdrop="static"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close data-dismiss="modal" type="button"
+        h3#modal-title Wir alle werden einmal alt...
+
+      .modal-body
+        .row
+          .col-md-12
+            .alert.alert-success Notieren Sie "Barrierefreiheit" als Lösungswort!
+
+        .row
+          .col-md-8
+            h4 Deshalb sollte Barrierefreiheit uns allen ein Anliegen sein!
+
+            markdown:
+              Barrierefreiheit betrifft nicht lediglich eine kleine Minderheit in unserer Gesellschaft. Die ältere Generation entdeckt das Internet immer mehr und wird es zukünftig noch stärker nutzen - nicht zuletzt, weil die heutige "junge" Generation die "alte" Generation von morgen sein wird.
+
+              **Besten Dank für's Mitmachen!**
+
+              Und vergessen Sie nicht, den Wettbewerbszettel ausgefüllt in die Teilnahmebox zu stecken.
+
+          .col-md-4
+            = image_tag 'seniority.jpg', class: 'img-rounded'
+
+        .row
+          .col-md-12
+            .controls
+              a.btn.btn-success.btn-lg href="index.html" Zurück zur Startseite

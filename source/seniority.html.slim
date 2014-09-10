@@ -1,0 +1,47 @@
+h1
+  .fa.fa-photo
+  | &nbsp;Was kommt im Alter auf viele von uns zu?
+
+p Bei vielen von uns dürften im Alter die Sinne schwächer werden: vor allem die Fähigkeit zu hören und zu sehen bauen langsam ab. Lernen Sie nachfolgend einige typische Probleme bezüglich unseres Augenlichts im Alter kennen!
+
+.row
+  .col-md-8
+    h2 Aufgabe
+
+    p Sie werden nun vier Mal denselben Schriftzug sehen, jedes Mal mit einer anderen simulierten Beeinträchtigung der Sicht.
+
+    .alert.alert-success
+      strong Das Ziel:
+      | &nbsp;Versuchen Sie, den Schriftzug zu lesen!
+
+    p Folgende Beeinträchtigungen werden simuliert:
+
+    ul
+      li Röhrenblick
+      li Makuladegeneration
+      li Grauer Star
+      li Kurzsichtigkeit
+
+    .controls
+      button.btn.btn-danger.btn-lg data-target="#seniority_simulation" data-toggle="modal"
+        span.fa.fa-play
+        | &nbsp;Zur Simulation
+
+    = render_partial 'seniority_simulation'
+
+    = render_partial 'seniority_resolution'
+
+  .col-md-4
+    .well
+      h2
+        .fa.fa-list-alt
+        | &nbsp;Fakten
+
+      ul
+        li ??% der Menschen sind blind
+        li
+          | ??% der Menschen sind stark sehbehindert
+
+          ul
+            li davon ??% unter 30 Jahren
+            li davon ??% über 60 Jahren

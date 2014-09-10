@@ -4,6 +4,7 @@
 //= require blindness
 //= require colorblindness
 //= require paraplegia
+//= require seniority
 
 $ ->
   $(".modal").on "show.bs.modal", ->
