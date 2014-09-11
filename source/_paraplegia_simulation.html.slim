@@ -1,4 +1,4 @@
-#paraplegia_simulation.modal.fade tabindex="-1" data-keyboard="false" data-backdrop="static"
+#paraplegia_simulation.modal2.fade2 tabindex="-1" data-keyboard="false" data-backdrop="static"
   .modal-dialog
     .modal-content
       .modal-header
@@ -8,19 +8,40 @@
           | &nbsp;Geben Sie <code>www.postfinance.ch</code> mit einem Mundstab ein!
 
       .modal-body
-        .alert.alert-info data-bind="visible: inputEmpty()" Bitte beginnen Sie mit der Eingabe!
+        .row
+          .col-md-6
+            .alert.alert-info data-bind="visible: inputEmpty()" Bitte beginnen Sie mit der Eingabe!
 
-        .alert.alert-warning data-bind="visible: inputOkay() && !inputEmpty() && !inputComplete()" Sie sind auf gutem Wege!
+            .alert.alert-warning data-bind="visible: inputOkay() && !inputEmpty() && !inputComplete()" Sie sind auf gutem Wege!
 
-        .alert.alert-danger data-bind="visible: !inputOkay()" Bitte korrigieren Sie die Eingabe!
+            .alert.alert-danger data-bind="visible: !inputOkay()" Bitte korrigieren Sie die Eingabe!
 
-        .alert.alert-success data-bind="visible: inputComplete()" Hurra! Sie haben es geschafft!
+            .alert.alert-success data-bind="visible: inputComplete()" Hurra! Sie haben es geschafft!
 
-        .form-horizontal
-          .form-group
-            label.col-sm-3.control-label for="address" Webadresse
-            .col-sm-7
-              input#address.form-control type="text" required="required" value="" data-bind="value: address, valueUpdate:'textchange'"
+            .form-horizontal
+              .form-group
+                label.col-sm-4.control-label for="address" Webadresse
+                .col-sm-8
+                  input#address.form-control type="text" required="required" value="" data-bind="value: address, valueUpdate:'textchange'"
+
+            #timer
+              | Benötigte Zeit:&nbsp;
+              span.minutes 00
+              |:
+              span.seconds 00
+
+            coffee:
+              pad = (val) ->
+                (if val > 9 then val else "0" + val)
+              sec = 0
+              setInterval (->
+                $("#timer .seconds").html pad(++sec % 60)
+                $("#timer .minutes").html pad(parseInt(sec / 60, 10))
+                return
+              ), 1000
+
+          .col-md-6
+            = image_tag 'postfinance_ad.jpg', class: 'img-rounded'
 
         .controls data-bind="visible: inputComplete()"
           button.btn.btn-success.btn-lg data-target="#paraplegia_resolution" data-toggle="modal" Bravo! Weiter zum Lösungswort.
