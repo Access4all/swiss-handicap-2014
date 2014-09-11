@@ -17,6 +17,6 @@ $ ->
   unless window.location.pathname is "/"
     new Idle(
       onAway: =>
-        window.location = "/"
+        location.reload(true)
       awayTimeout: 300000 # 5mins
     )
