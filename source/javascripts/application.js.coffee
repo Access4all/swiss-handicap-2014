@@ -1,5 +1,6 @@
 //= require jquery
 //= require bootstrap
+//= require jquery.textchange
 
 //= require blindness
 //= require colorblindness
