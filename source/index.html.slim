@@ -4,7 +4,7 @@ p In den folgenden Minuten erhalten Sie einen Eindruck davon, wie es für Mensch
 
 .row
   .col-md-6
-    = link_to 'blindness.html' do
+    = link_to 'blindness.html', class: 'task'
       .well
         .fa.fa-eye-slash
 
@@ -12,7 +12,7 @@ p In den folgenden Minuten erhalten Sie einen Eindruck davon, wie es für Mensch
         p Versuchen Sie, die Ausgabe eines sogenannten Screenreaders (Programm zum Vorlesen von Text- und anderen Inhalten) zu verstehen!
 
   .col-md-6
-    = link_to 'paraplegia.html' do
+    = link_to 'paraplegia.html', class: 'task'
       .well
         .fa.fa-arrows
 
@@ -21,7 +21,7 @@ p In den folgenden Minuten erhalten Sie einen Eindruck davon, wie es für Mensch
 
 .row
   .col-md-6
-    = link_to 'colorblindness.html'
+    = link_to 'colorblindness.html', class: 'task'
       .well
         .fa.fa-photo
 
@@ -29,7 +29,7 @@ p In den folgenden Minuten erhalten Sie einen Eindruck davon, wie es für Mensch
         p Steht die Ampel auf grün oder rot? Farbenblindheit bringt viele Schwierigkeiten mit sich, auch im Internet.
 
   .col-md-6
-    = link_to 'seniority.html' do
+    = link_to 'seniority.html', class: 'task'
       .well
         .fa.fa-wheelchair
 
@@ -37,6 +37,8 @@ p In den folgenden Minuten erhalten Sie einen Eindruck davon, wie es für Mensch
         p Im Alter lassen unsere Sinne nach. Welchen Einfluss kann dies auf unsere Sicht haben?
 
 .controls
+  p = link_to 'Alternative Version für Blinde', 'alternative.html'
+
   button.btn.btn-danger.btn-lg data-target="#contest" data-toggle="modal"
     span.fa.fa-play
     | &nbsp;Simulation starten
