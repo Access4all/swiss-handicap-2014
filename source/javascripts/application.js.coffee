@@ -17,6 +17,6 @@ $ ->
   unless window.location.pathname is "/"
     new Idle(
       onAway: =>
-        window.location = "/" if confirm("Sie sind seit einiger Zeit inkativ. Abbrechen?")
+        window.location = "/"
       awayTimeout: 300000 # 5mins
     )
