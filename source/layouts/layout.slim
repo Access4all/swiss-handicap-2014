@@ -39,16 +39,12 @@ html
               li class=nav_active('paraplegia')
                 = link_to 'paraplegia.html' do
                   .fa.fa-wheelchair
-                  | &nbsp;Paraplegie
+                  | &nbsp;Motorik
 
               li class=nav_active('seniority')
                 = link_to 'seniority.html' do
                   .fa.fa-bullhorn
                   | &nbsp;Altersschwäche
-
-            ul.nav.navbar-nav.navbar-right
-              li = link_to 'http://www.postfinance.ch' do
-                = image_tag 'postfinance.jpg'
 
     main.container[role="main"]
       .row
@@ -57,6 +53,7 @@ html
 
           = yield
 
-    / .footer
-    /   .container
-    /     = image_tag 'access4all.gif'
+    .footer
+      .container
+        = image_tag 'postfinance.jpg', class: 'postfinance img-rounded'
+        = image_tag 'access4all.gif', class: 'access4all img-rounded'
