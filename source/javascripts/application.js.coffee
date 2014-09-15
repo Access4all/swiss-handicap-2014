@@ -19,5 +19,5 @@ $ ->
     new Idle(
       onAway: =>
         window.location = "/"
-      awayTimeout: 300000 # 5mins
+      awayTimeout: 180000 # 5mins
     )
