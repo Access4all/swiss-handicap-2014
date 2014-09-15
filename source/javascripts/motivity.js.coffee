@@ -1,4 +1,4 @@
-class ParaplegiaViewModel
+class MotivityViewModel
   constructor: ->
     @address = ko.observable('')
     @countTime = false
@@ -30,5 +30,5 @@ class ParaplegiaViewModel
     ), 1000
 
 $ ->
-  $('body.paraplegia').each ->
-    ko.applyBindings new ParaplegiaViewModel
+  $('body.motivity').each ->
+    ko.applyBindings new MotivityViewModel

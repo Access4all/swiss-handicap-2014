@@ -4,7 +4,7 @@
 
 //= require blindness
 //= require colorblindness
-//= require paraplegia
+//= require motivity
 //= require seniority
 
 $ ->
