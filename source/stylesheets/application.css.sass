@@ -95,11 +95,6 @@ body.blindness
       margin-left: 1em
 
 body.colorblindness
-  +transition(5s all ease)
-
-  &.grayscale
-    +filter(grayscale(100%))
-
   em
     font-weight: bold
     font-style: normal
@@ -112,6 +107,12 @@ body.colorblindness
 
     &.occupied
       color: red
+
+  .grayscale
+    +filter(grayscale(100%))
+
+  table#calendar
+    +transition(5s all ease)
 
   td
     background-color: #ceffcb

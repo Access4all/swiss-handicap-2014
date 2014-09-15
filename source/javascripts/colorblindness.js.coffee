@@ -2,6 +2,9 @@ class ColorblindnessViewModel
   constructor: ->
     @toOccupyCount = ko.observable(0)
 
+    $('td').click (e) =>
+      $(e.target).removeClass('grayscale')
+
     $('td.occupied').click ->
       alert 'Dieser Termin ist schon besetzt!'
 
@@ -14,9 +17,8 @@ class ColorblindnessViewModel
         $target.addClass('to_occupy')
         @toOccupyCount(@toOccupyCount() + 1)
 
-        console.log @toOccupyCount()
         if @toOccupyCount() == 5
-          $('body').removeClass('grayscale')
+          $('.grayscale').removeClass('grayscale')
       else
         alert 'Bitte nur einen Termin pro Tag anwählen!'
 
@@ -25,4 +27,10 @@ $ ->
     ko.applyBindings new ColorblindnessViewModel
 
   $('#colorblindness_simulation').on 'shown.bs.modal', (e) ->
-    $('body').addClass('grayscale')
+    $('#calendar').addClass('grayscale') # Makes the whole table grayscale in 3 secs (making single table cells grayscale results in weird transition colors)
+
+    # After the whole calendar is 100% grayscale, remove its class again, and set it directly on the cells (without animation)
+    setInterval (=>
+      $('#calendar').removeClass('grayscale')
+      $('#calendar td').addClass('grayscale')
+    ), 3000
