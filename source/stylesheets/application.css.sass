@@ -108,7 +108,7 @@ body.colorblindness
       color: green
 
     &.not_available
-      color: gray
+      color: blue
 
     &.occupied
       color: red
@@ -122,17 +122,34 @@ body.colorblindness
   td
     background-color: #ceffcb
 
+    // &:after
+    //   font-family: FontAwesome
+    //   content: "\f00c"
+    //   display: block
+
     &:hover
       cursor: pointer
   
     &.occupied
       background-color: #ffeaea
 
-    &.not_available
-      background-color: #ebebeb
+      // &:after
+      //   font-family: FontAwesome
+      //   content: "\f007"
+      //   display: block
 
-    &.to_occupy
-      background-color: #ffead4
+    &.not_available
+      background-color: #ddefff
+
+      // &:after
+      //   font-family: FontAwesome
+      //   content: "\f071"
+      //   display: block
+
+    &.to_occupy:after
+      font-family: FontAwesome
+      content: "\f00c"
+      display: block
 
 body.alternative
   header

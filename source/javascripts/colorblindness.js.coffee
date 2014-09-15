@@ -5,12 +5,6 @@ class ColorblindnessViewModel
     $('td').click (e) =>
       $(e.target).removeClass('grayscale')
 
-    $('td.occupied').click ->
-      alert 'Dieser Termin ist schon besetzt!'
-
-    $('td.not_available').click ->
-      alert 'Dieser Termin ist nicht verfügbar!'
-
     $('td:not(.occupied, .not_available)').click (e) =>
       $target = $(e.target)
       if $target.parent().find('.to_occupy').length == 0
@@ -19,8 +13,6 @@ class ColorblindnessViewModel
 
         if @toOccupyCount() == 5
           $('.grayscale').removeClass('grayscale')
-      else
-        alert 'Bitte nur einen Termin pro Tag anwählen!'
 
 $ ->
   $('body.colorblindness').each ->
@@ -30,7 +22,7 @@ $ ->
     $('#calendar').addClass('grayscale') # Makes the whole table grayscale in 3 secs (making single table cells grayscale results in weird transition colors)
 
     # After the whole calendar is 100% grayscale, remove its class again, and set it directly on the cells (without animation)
-    setInterval (=>
+    setTimeout (=>
       $('#calendar').removeClass('grayscale')
       $('#calendar td').addClass('grayscale')
     ), 3000
