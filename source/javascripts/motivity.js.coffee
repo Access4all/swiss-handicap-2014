@@ -7,14 +7,14 @@ class MotivityViewModel
       @address() == ''
 
     @inputComplete = =>
-      return if @address() == 'www.postfinance.ch'
+      return if @address() == 'postfinance'
                 @countTime = false
                 true
               else
                 false
 
     @inputOkay = =>
-      "www.postfinance.ch".indexOf(@address()) == 0
+      "postfinance".indexOf(@address()) == 0
 
     @startTimer = =>
       @countTime = true
