@@ -16,13 +16,10 @@
                 .col-sm-9
                   input#address.form-control type="text" required="required" value="" data-bind="value: address, valueUpdate:'textchange', event: { textchange: startCountdown }"
 
-            .alert.alert-info data-bind="visible: inputEmpty()" Bitte beginnen Sie mit der Eingabe!
-            .alert.alert-warning data-bind="visible: inputOkay() && !inputEmpty() && !inputComplete()" Sie sind auf gutem Wege!
-            .alert.alert-warning data-bind="visible: !inputOkay() && !inputEmpty() && !inputComplete()" Eingabe fehlerhaft!
-            .alert.alert-danger data-bind="visible: failureMessage(), text: failureMessage()"
-            .alert.alert-success data-bind="visible: inputComplete()" Hurra! Sie haben es geschafft!
+            .alert.alert-info data-bind="visible: infoMsg(), text: infoMsg()"
+            .alert.alert-danger data-bind="visible: failureMsg(), text: failureMsg()"
 
-            #timer
+            #timer data-bind="visible: !gameOver()"
               | Verbleibende Zeit:&nbsp;
               <!--ko text: currentLimit()--><!--/ko-->
               |&nbsp;Sekunden
@@ -47,3 +44,6 @@
 
         .controls data-bind="visible: inputComplete()"
           button.btn.btn-success.btn-lg data-target="#motivity_resolution" data-toggle="modal" Bravo! Weiter zum Lösungswort.
+
+        .controls data-bind="visible: gameOver()"
+          button.btn.btn-success.btn-lg data-target="#motivity_resolution" data-toggle="modal" Trotzdem weiter zum Lösungswort, bitte.

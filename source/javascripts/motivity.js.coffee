@@ -10,7 +10,9 @@ class MotivityViewModel
     ]
 
     @currentLimitId = ko.observable(-1)
-    @failureMessage = ko.observable(null)
+    @failureMsg = ko.observable(null)
+    @infoMsg = ko.observable(null)
+    @gameOver = ko.observable(false)
 
     @currentLimit = ko.observable(0)
 
@@ -38,10 +40,9 @@ class MotivityViewModel
       "postfinance".indexOf(@address()) == 0
 
     @startCountdown = =>
-      console.log 'startCountdown'
       if @address().length == 1 and !@countdownRunning
         @countdownRunning = true
-        @failureMessage(null)
+        @failureMsg(null)
 
         timer = setInterval (=>
           if @countdownRunning
@@ -51,14 +52,22 @@ class MotivityViewModel
               clearInterval timer
 
               if @hasNext()
-                $('#address').val ''
                 @next()
-                @failureMessage("Leider zu langsam. Nächster Versuch mit #{@currentLimit()} Sekunden.")
+                @failureMsg("Leider zu langsam. Nächster Versuch mit #{@currentLimit()} Sekunden.")
               else
-                console.log 'Verloren'
+                @failureMsg("Sie haben es leider nicht geschafft.")
+                @gameOver(true)
+
+              $('#address').prop('disabled', true)
+              player = new Audio("audios/beep.mp3")
+              player.addEventListener 'ended', (=>
+                $('#address').prop('disabled', false).focus()
+              ), false
+              player.play()
         ), 1000
 
     @next = =>
+      $('#address').val ''
       @currentLimitId(@currentLimitId() + 1)
       @currentLimit(@limits[@currentLimitId()])
       $('#current_limit').text @currentLimit()
