@@ -11,7 +11,7 @@ class MotivityViewModel
 
     @currentLimitId = ko.observable(-1)
     @failureMsg = ko.observable(null)
-    @infoMsg = ko.observable(null)
+    @infoMsg = ko.observable('Bitte beginnen Sie mit der Eingabe, um die den Countdown zu starten.')
     @gameOver = ko.observable(false)
 
     @currentLimit = ko.observable(0)
@@ -37,9 +37,13 @@ class MotivityViewModel
                 false
 
     @inputOkay = =>
-      "postfinance".indexOf(@address()) == 0
+      if "postfinance".indexOf(@address()) == 0
+      else
+        false
 
     @startCountdown = =>
+      @infoMsg(null)
+
       if @address().length == 1 and !@countdownRunning
         @countdownRunning = true
         @failureMsg(null)
@@ -53,7 +57,7 @@ class MotivityViewModel
 
               if @hasNext()
                 @next()
-                @failureMsg("Leider zu langsam. Nächster Versuch mit #{@currentLimit()} Sekunden.")
+                @failureMsg("Leider zu langsam. Versuchen Sie es erneut, dieses Mal mit #{@currentLimit()} Sekunden Zeitlimit.")
               else
                 @failureMsg("Sie haben es leider nicht geschafft.")
                 @gameOver(true)

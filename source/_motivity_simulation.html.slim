@@ -16,9 +16,6 @@
                 .col-sm-9
                   input#address.form-control type="text" required="required" value="" data-bind="value: address, valueUpdate:'textchange', event: { textchange: startCountdown }"
 
-            .alert.alert-info data-bind="visible: infoMsg(), text: infoMsg()"
-            .alert.alert-danger data-bind="visible: failureMsg(), text: failureMsg()"
-
             #timer data-bind="visible: !gameOver()"
               | Verbleibende Zeit:&nbsp;
               <!--ko text: currentLimit()--><!--/ko-->
@@ -37,10 +34,15 @@
                       <!--ko text: totalAttempts()--><!--/ko-->
 
                 tr
-                  th Aktuelles Limit
+                  th Aktuelles Zeitlimit
                   td
                     span#current_limit
                     |&nbsp; Sekunden
+
+        .row
+          .col-md-12
+            .alert.alert-info data-bind="visible: infoMsg(), text: infoMsg()"
+            .alert.alert-danger data-bind="visible: failureMsg(), text: failureMsg()"
 
         .controls data-bind="visible: inputComplete()"
           button.btn.btn-success.btn-lg data-target="#motivity_resolution" data-toggle="modal" Bravo! Weiter zum Lösungswort.
