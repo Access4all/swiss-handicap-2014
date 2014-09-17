@@ -4,9 +4,9 @@ class MotivityViewModel
     @countdownRunning = false
 
     @limits = [
-      2,
-      4,
-      6
+      10,
+      20,
+      30
     ]
 
     @currentLimitId = ko.observable(-1)
@@ -82,3 +82,6 @@ class MotivityViewModel
 $ ->
   $('body.motivity').each ->
     ko.applyBindings new MotivityViewModel
+
+  $('#motivity_simulation').on "shown.bs.modal", ->
+    $('#address').focus()
