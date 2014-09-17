@@ -30,14 +30,14 @@ class MotivityViewModel
       @address() == ''
 
     @inputComplete = =>
-      return if @address() == 'postfinance'
+      return if @address() == 'Postfinance'
                 @countdownRunning = false
                 true
               else
                 false
 
     @inputOkay = =>
-      if "postfinance".indexOf(@address()) == 0
+      if "Postfinance".indexOf(@address()) == 0
       else
         false
 
@@ -64,6 +64,7 @@ class MotivityViewModel
 
               $('#address').prop('disabled', true)
               player = new Audio("audios/beep.mp3")
+              player.load()
               player.addEventListener 'ended', (=>
                 $('#address').prop('disabled', false).focus()
               ), false
