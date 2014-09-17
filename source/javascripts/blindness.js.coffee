@@ -25,8 +25,6 @@ class BlindnessViewModel
     @play = ->
       @player.play()
 
-    @hasNext = ->
-
     @hasNext = ko.computed(->
       @currentAudioId() + 1 < @audios.length
     , this)
