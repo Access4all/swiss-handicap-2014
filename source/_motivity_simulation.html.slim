@@ -18,7 +18,8 @@
 
             .alert.alert-info data-bind="visible: inputEmpty()" Bitte beginnen Sie mit der Eingabe!
             .alert.alert-warning data-bind="visible: inputOkay() && !inputEmpty() && !inputComplete()" Sie sind auf gutem Wege!
-            .alert.alert-danger data-bind="visible: !inputOkay()" Bitte korrigieren Sie die Eingabe!
+            .alert.alert-warning data-bind="visible: !inputOkay() && !inputEmpty() && !inputComplete()" Eingabe fehlerhaft!
+            .alert.alert-danger data-bind="visible: failureMessage(), text: failureMessage()"
             .alert.alert-success data-bind="visible: inputComplete()" Hurra! Sie haben es geschafft!
 
             #timer
@@ -41,7 +42,7 @@
                 tr
                   th Aktuelles Limit
                   td
-                    #current_limit
+                    span#current_limit
                     |&nbsp; Sekunden
 
         .controls data-bind="visible: inputComplete()"

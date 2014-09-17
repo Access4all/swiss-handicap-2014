@@ -1,7 +1,7 @@
 class MotivityViewModel
   constructor: ->
     @address = ko.observable('')
-    @countTime = false
+    @countdownRunning = false
 
     @limits = [
       2,
@@ -10,17 +10,18 @@ class MotivityViewModel
     ]
 
     @currentLimitId = ko.observable(-1)
+    @failureMessage = ko.observable(null)
 
     @currentLimit = ko.observable(0)
 
-    @hasNext = ko.computed(->
+    @hasNext = ko.computed(=>
       @currentLimitId() + 1 < @limits.length
     , this)
 
-    @currentAttempt = ->
+    @currentAttempt = =>
       @currentLimitId() + 1
 
-    @totalAttempts = ->
+    @totalAttempts = =>
       @limits.length
 
     @inputEmpty = =>
@@ -28,7 +29,7 @@ class MotivityViewModel
 
     @inputComplete = =>
       return if @address() == 'postfinance'
-                @countTime = false
+                @countdownRunning = false
                 true
               else
                 false
@@ -37,26 +38,31 @@ class MotivityViewModel
       "postfinance".indexOf(@address()) == 0
 
     @startCountdown = =>
-      @countTime = true
+      console.log 'startCountdown'
+      if @address().length == 1 and !@countdownRunning
+        @countdownRunning = true
+        @failureMessage(null)
 
-      timer = setInterval (=>
-        if @countTime
-          @currentLimit(@currentLimit() - 1)
+        timer = setInterval (=>
+          if @countdownRunning
+            @currentLimit(@currentLimit() - 1)
 
-          if @currentLimit() == 0
-            clearInterval timer
-            alert 'zu langsam!'
+            if @currentLimit() == 0
+              clearInterval timer
 
-            if @hasNext()
-              @next()
-            else
-              alert 'verloren!'
-      ), 1000
+              if @hasNext()
+                $('#address').val ''
+                @next()
+                @failureMessage("Leider zu langsam. Nächster Versuch mit #{@currentLimit()} Sekunden.")
+              else
+                console.log 'Verloren'
+        ), 1000
 
-    @next = ->
+    @next = =>
       @currentLimitId(@currentLimitId() + 1)
       @currentLimit(@limits[@currentLimitId()])
-      $('#current_limit').replaceWith @currentLimit()
+      $('#current_limit').text @currentLimit()
+      @countdownRunning = false
 
     @next()
 
