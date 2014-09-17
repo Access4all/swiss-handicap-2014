@@ -10,28 +10,39 @@
       .modal-body
         .row
           .col-md-6
-            .alert.alert-info data-bind="visible: inputEmpty()" Bitte beginnen Sie mit der Eingabe!
-
-            .alert.alert-warning data-bind="visible: inputOkay() && !inputEmpty() && !inputComplete()" Sie sind auf gutem Wege!
-
-            .alert.alert-danger data-bind="visible: !inputOkay()" Bitte korrigieren Sie die Eingabe!
-
-            .alert.alert-success data-bind="visible: inputComplete()" Hurra! Sie haben es geschafft!
-
             .form-horizontal
               .form-group
-                label.col-sm-4.control-label for="address" Webadresse
-                .col-sm-8
-                  input#address.form-control type="text" required="required" value="" data-bind="value: address, valueUpdate:'textchange', event: { focus: startTimer }"
+                label.col-sm-3.control-label for="address" Eingabe
+                .col-sm-9
+                  input#address.form-control type="text" required="required" value="" data-bind="value: address, valueUpdate:'textchange', event: { textchange: startCountdown }"
+
+            .alert.alert-info data-bind="visible: inputEmpty()" Bitte beginnen Sie mit der Eingabe!
+            .alert.alert-warning data-bind="visible: inputOkay() && !inputEmpty() && !inputComplete()" Sie sind auf gutem Wege!
+            .alert.alert-danger data-bind="visible: !inputOkay()" Bitte korrigieren Sie die Eingabe!
+            .alert.alert-success data-bind="visible: inputComplete()" Hurra! Sie haben es geschafft!
 
             #timer
-              | Benötigte Zeit:&nbsp;
-              span.minutes 00
-              |:
-              span.seconds 00
+              | Verbleibende Zeit:&nbsp;
+              <!--ko text: currentLimit()--><!--/ko-->
+              |&nbsp;Sekunden
 
           .col-md-6
-            = image_tag 'postfinance_ad.jpg', class: 'img-rounded'
+            / = image_tag 'postfinance_ad.jpg', class: 'img-rounded'
+            table.table.table-bordered
+              tbody
+                tr
+                  th Versuchsnummer
+                  td
+                    .badge.alert-success
+                      <!--ko text: currentAttempt()--><!--/ko-->
+                      |&nbsp;von&nbsp;
+                      <!--ko text: totalAttempts()--><!--/ko-->
+
+                tr
+                  th Aktuelles Limit
+                  td
+                    #current_limit
+                    |&nbsp; Sekunden
 
         .controls data-bind="visible: inputComplete()"
           button.btn.btn-success.btn-lg data-target="#motivity_resolution" data-toggle="modal" Bravo! Weiter zum Lösungswort.

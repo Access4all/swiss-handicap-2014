@@ -3,6 +3,26 @@ class MotivityViewModel
     @address = ko.observable('')
     @countTime = false
 
+    @limits = [
+      2,
+      4,
+      6
+    ]
+
+    @currentLimitId = ko.observable(-1)
+
+    @currentLimit = ko.observable(0)
+
+    @hasNext = ko.computed(->
+      @currentLimitId() + 1 < @limits.length
+    , this)
+
+    @currentAttempt = ->
+      @currentLimitId() + 1
+
+    @totalAttempts = ->
+      @limits.length
+
     @inputEmpty = =>
       @address() == ''
 
@@ -16,18 +36,29 @@ class MotivityViewModel
     @inputOkay = =>
       "postfinance".indexOf(@address()) == 0
 
-    @startTimer = =>
+    @startCountdown = =>
       @countTime = true
 
-    @pad = (val) ->
-      (if val > 9 then val else "0" + val)
+      timer = setInterval (=>
+        if @countTime
+          @currentLimit(@currentLimit() - 1)
 
-    sec = 0
-    setInterval (=>
-      if @countTime
-        $("#timer .seconds").html @pad(++sec % 60)
-        $("#timer .minutes").html @pad(parseInt(sec / 60, 10))
-    ), 1000
+          if @currentLimit() == 0
+            clearInterval timer
+            alert 'zu langsam!'
+
+            if @hasNext()
+              @next()
+            else
+              alert 'verloren!'
+      ), 1000
+
+    @next = ->
+      @currentLimitId(@currentLimitId() + 1)
+      @currentLimit(@limits[@currentLimitId()])
+      $('#current_limit').replaceWith @currentLimit()
+
+    @next()
 
 $ ->
   $('body.motivity').each ->
