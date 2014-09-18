@@ -57,22 +57,21 @@ class MotivityViewModel
 
               if @hasNext()
                 @next()
+                @clearInput()
                 @failureMsg("Leider zu langsam. Versuchen Sie es erneut, dieses Mal mit #{@currentLimit()} Sekunden Zeitlimit.")
               else
                 @failureMsg("Sie haben es leider nicht geschafft.")
                 @gameOver(true)
-
-              $('#address').prop('disabled', true)
-              player = new Audio("audios/beep.mp3")
-              player.load()
-              player.addEventListener 'ended', (=>
-                $('#address').prop('disabled', false).focus()
-              ), false
-              player.play()
         ), 1000
 
-    @next = =>
+    @clearInput = =>
       $('#address').val ''
+      $('#address').prop('disabled', true)
+      setTimeout (->
+        $('#address').prop('disabled', false).focus()
+      ), 3000
+
+    @next = =>
       @currentLimitId(@currentLimitId() + 1)
       @currentLimit(@limits[@currentLimitId()])
       $('#current_limit').text @currentLimit()
