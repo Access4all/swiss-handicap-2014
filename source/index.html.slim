@@ -1,7 +1,5 @@
 h1 Willkommen zum Handicap Simulator!
 
-p In den folgenden Minuten erhalten Sie einen Eindruck davon, wie es für Menschen mit körperlichen Einschränkungen ist, im Internet zu surfen.
-
 .row
   .col-md-6
     = link_to 'blindness.html' do
@@ -12,21 +10,21 @@ p In den folgenden Minuten erhalten Sie einen Eindruck davon, wie es für Mensch
         p Versuchen Sie, die Ausgabe eines sogenannten Screenreaders (Programm zum Vorlesen von Text- und anderen Inhalten) zu verstehen!
 
   .col-md-6
-    = link_to 'paraplegia.html' do
-      .well
-        .fa.fa-arrows
-
-        h2 Paraplegie
-        p Wie schnell können Sie ohne Hände, aber mittels eines Mundstabs, Ihren Namen in ein Formular eingeben?
-
-.row
-  .col-md-6
-    = link_to 'colorblindness.html'
+    = link_to 'colorblindness.html' do
       .well
         .fa.fa-photo
 
         h2 Farbenblindheit
         p Steht die Ampel auf grün oder rot? Farbenblindheit bringt viele Schwierigkeiten mit sich, auch im Internet.
+
+.row
+  .col-md-6
+    = link_to 'motivity.html' do
+      .well
+        .fa.fa-arrows
+
+        h2 Motorik
+        p Wie schnell können Sie ohne Hände, aber mittels eines Mundstabs, Ihren Namen in ein Formular eingeben?
 
   .col-md-6
     = link_to 'seniority.html' do
@@ -35,28 +33,3 @@ p In den folgenden Minuten erhalten Sie einen Eindruck davon, wie es für Mensch
 
         h2 Altersschwäche
         p Im Alter lassen unsere Sinne nach. Welchen Einfluss kann dies auf unsere Sicht haben?
-
-#contest.modal.fade tabindex="-1" data-keyboard="false" data-backdrop="static"
-  .modal-dialog
-    .modal-content
-      .modal-header
-        button.close data-dismiss="modal" type="button"
-        h4#modal-title Gewinnen Sie ein iPad!
-
-      .modal-body
-        .row
-          .col-md-7
-            p Nehmen Sie Ihre Chance wahr, und gewinnen Sie ein iPad der neusten Generation!
-
-            ul
-              li Jede der vier Simulationen hält ein Lösungswort bereit.
-              li Schreiben Sie diese auf Ihre Teilnahmekarte.
-              li Melden Sie sich nach Ende der Simulationen bei uns, um bei der Verlosung Teil zu nehmen.
-
-            p Viel Glück!
-
-          .col-md-5
-            = image_tag 'ipad.jpg'
-
-      .modal-footer
-        a.btn.btn-danger href="blindness.html" Weiter zu Simulation 1
