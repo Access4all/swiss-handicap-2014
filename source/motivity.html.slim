@@ -3,17 +3,12 @@ h1
   | &nbsp;Wie fühlen sich eingeschränkte Bewegungsmöglichkeiten an?
 
 .row
-  .col-md-8
-    h2 Aufgabe
-
+  .col-md-12
     p Motorisch eingeschränkte Personen sind oft auf einen Hand- oder Mundstab angewiesen, um einen Computer zu bedienen.
 
     .alert.alert-success
       strong Das Ziel:
       | &nbsp;Geben Sie im Formular <code>Postfinance</code> ein! Benutzen Sie dazu einen Hand- oder Mundstab.
-
-    p
-      | Sobald die Eingabe korrekt ist und Sie den "Abschicken" Button geklickt haben, erfahren Sie das Lösungswort.
 
     .controls
       button.btn.btn-danger.btn-lg data-target="#motivity_simulation" data-toggle="modal"
@@ -23,18 +18,3 @@ h1
     = render_partial 'motivity_simulation'
 
     = render_partial 'motivity_resolution'
-
-  .col-md-4
-    .well
-      h2
-        .fa.fa-list-alt
-        | &nbsp;Fakten
-
-      ul
-        li ??% der Menschen sind blind
-        li
-          | ??% der Menschen sind stark sehbehindert
-
-          ul
-            li davon ??% unter 30 Jahren
-            li davon ??% über 60 Jahren

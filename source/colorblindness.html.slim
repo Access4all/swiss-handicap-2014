@@ -3,31 +3,12 @@ h1
   | &nbsp;Welche Probleme stellen sich Farbenblinden?
 
 .row
-  .col-md-8
-    h2 Aufgabe
-
+  .col-md-12
     p Überall im Alltag stellen Hinweise, die nur farblich erkennbar sind, Farbenblinde vor erhebliche Probleme.
 
     .alert.alert-success
       strong Das Ziel:
       | &nbsp;Wählen Sie im Kalender nachfolgend angezeigten Kalender an jedem Tag einen freien Termin aus!
-
-    p Die Termine sind farbcodiert:
-
-    ul
-      li
-        em.occupied&nbsp;rote Termine
-        |&nbsp;sind besetzt
-
-      li
-        em.not_available&nbsp;blaue Termine
-        |&nbsp;sind nicht verfügbar
-
-      li
-        em.free&nbsp;grüne Termine
-        |&nbsp;sind frei
-
-    p Hinweis: Sobald die Simulation gestartet wird, wechselt die Ansicht von farbig zu schwarz-weiss!
 
     .controls
       button.btn.btn-danger.btn-lg data-target="#colorblindness_simulation" data-toggle="modal"
@@ -37,18 +18,3 @@ h1
     = render_partial 'colorblindness_simulation'
 
     = render_partial 'colorblindness_resolution'
-
-  .col-md-4
-    .well
-      h2
-        .fa.fa-list-alt
-        | &nbsp;Fakten
-
-      ul
-        li ??% der Menschen sind blind
-        li
-          | ??% der Menschen sind stark sehbehindert
-
-          ul
-            li davon ??% unter 30 Jahren
-            li davon ??% über 60 Jahren

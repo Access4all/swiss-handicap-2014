@@ -2,7 +2,6 @@
   .modal-dialog
     .modal-content
       .modal-header
-        button.btn.btn-default.btn-sm.restart onclick="window.location.reload()" Simulation neustarten
         button.close data-dismiss="modal" type="button"
         h3#modal-title
           .fa.fa-eye-slash
@@ -38,3 +37,8 @@
               button.btn.btn-success.btn-lg data-target="#blindness_resolution" data-toggle="modal" Ja
               button.btn.btn-danger.btn-lg data-bind="click: next, visible: hasNext" Nein, bitte langsamer!
               button.btn.btn-danger.btn-lg data-bind="visible: !hasNext()" data-target="#blindness_resolution" data-toggle="modal" Nein, zeige Lösung!
+
+        .row
+          .col-md-12
+            hr
+              button.btn.btn-info.restart onclick="window.location.reload()" Zur Startseite
