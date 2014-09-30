@@ -9,13 +9,6 @@ class BlindnessViewModel
     @totalAttempts = ->
       @audios.length
 
-    @answer = =>
-      if @hasNext()
-        alert "Versuchen Sie es noch einmal; die Geschwindigkeit wird gedrosselt."
-        @next()
-      else
-        alert "Leider verloren!"
-
     @chooseAnswer = ko.observable(false)
 
     @audios = [
@@ -31,8 +24,6 @@ class BlindnessViewModel
 
     @play = ->
       @player.play()
-
-    @hasNext = ->
 
     @hasNext = ko.computed(->
       @currentAudioId() + 1 < @audios.length

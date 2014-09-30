@@ -1,13 +1,21 @@
+@import "compass/css3/border-radius"
 @import "compass/css3/filter"
 @import "compass/css3/text-shadow"
 @import "compass/css3/transition"
 @import "compass/utilities/general/float"
 
+$link-color: #3476C9
+$navbar-inverse-link-color: #939393
+$btn-info-bg: #18647F
+$btn-success-bg: #387F36
+
 @import "bootstrap"
 @import "font-awesome"
 
 main
-  padding-top: 60px
+  padding:
+    top: 60px
+    bottom: 60px
 
   img
     max-width: 100%
@@ -27,13 +35,18 @@ h1
   position: fixed
   bottom: 0
   width: 100%
-  height: 60px
-  background-color: #f5f5f5
 
   img
-    +float-right
-    height: 48px
-    margin: 6px 0
+    border: 1px solid #000
+    height: 50px
+    position: absolute
+    bottom: 10px
+
+    &.postfinance
+      right: 10px
+
+    &.access4all
+      left: 10px
 
 .navbar
   .navbar-brand.active
@@ -68,7 +81,6 @@ body.index
 
     .well
       +clearfix
-      height: 180px
 
       .fa
         +float-right
@@ -88,15 +100,12 @@ body.blindness
   margin-top: 20px
 
   .btn
-    margin-right: 1em
     margin-bottom: 0.5em
+    
+    + .btn
+      margin-left: 1em
 
 body.colorblindness
-  +transition(5s all ease)
-
-  &.grayscale
-    +filter(grayscale(100%))
-
   em
     font-weight: bold
     font-style: normal
@@ -105,13 +114,24 @@ body.colorblindness
       color: green
 
     &.not_available
-      color: gray
+      color: blue
 
     &.occupied
       color: red
 
+  .grayscale
+    +filter(grayscale(100%))
+
+  table#calendar
+    +transition(5s all ease)
+
   td
     background-color: #ceffcb
+
+    // &:after
+    //   font-family: FontAwesome
+    //   content: "\f00c"
+    //   display: block
 
     &:hover
       cursor: pointer
@@ -119,11 +139,30 @@ body.colorblindness
     &.occupied
       background-color: #ffeaea
 
-    &.not_available
-      background-color: #ebebeb
+      // &:after
+      //   font-family: FontAwesome
+      //   content: "\f007"
+      //   display: block
 
-    &.to_occupy
-      background-color: #ffead4
+    &.not_available
+      background-color: #ddefff
+
+      // &:after
+      //   font-family: FontAwesome
+      //   content: "\f071"
+      //   display: block
+
+    &.to_occupy:after
+      font-family: FontAwesome
+      content: "\f00c"
+      display: block
+
+body.alternative
+  header
+    display: none
+
+  main
+    padding-top: 0
 
 .carousel
   margin-bottom: 1em
@@ -135,3 +174,14 @@ body.colorblindness
     color: #fff
     background-color: #000
     padding: 4px 10px
+
+#timer
+  +border-radius(5px)
+  margin: 1em auto
+  text-align: right
+
+  span
+    font-weight: bold
+
+button.restart
+  +float-right

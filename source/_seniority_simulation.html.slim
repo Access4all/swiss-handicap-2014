@@ -10,6 +10,8 @@
       .modal-body
         .row
           .col-md-12
+            p Schauen Sie sich die unterschiedlichen Simulationen an und versuchen Sie, das angezeigte Wort zu erkennen.
+
             #seniority_carousel.carousel.slide data-ride="carousel"
               ol.carousel-indicators
                 li.active data-slide-to="0" data-target="#seniority_carousel"
@@ -39,23 +41,10 @@
               a.right.carousel-control data-slide="next" href="#seniority_carousel" role="button"
                 span.glyphicon.glyphicon-chevron-right
 
-        .row
-          .col-md-12
-            .alert.alert-info data-bind="visible: inputEmpty()" Geben Sie das Wort unten ein!
-
-            .alert.alert-warning data-bind="visible: inputOkay() && !inputEmpty() && !inputComplete()" Sie sind auf gutem Wege!
-
-            .alert.alert-danger data-bind="visible: !inputOkay()" Bitte korrigieren Sie die Eingabe!
-
-            .alert.alert-success data-bind="visible: inputComplete()" Hurra! Sie haben es geschafft!
+          .controls
+            button.btn.btn-success.btn-lg data-target="#seniority_resolution" data-toggle="modal" Wort erkannt!
 
         .row
           .col-md-12
-            .form-horizontal
-              .form-group
-                label.col-sm-3.control-label for="address" Lösungswort
-                .col-sm-7
-                  input#resolution.form-control type="text" required="required" value="" data-bind="value: resolution, valueUpdate:'textchange'" placeholder="Bitte hier Lösungswort eingeben"
-
-          .controls data-bind="visible: inputComplete()"
-            button.btn.btn-success.btn-lg data-target="#seniority_resolution" data-toggle="modal" Bravo! Weiter zum Lösungswort.
+            hr
+              a.btn.btn-success.btn-lg href="seniority.html" Beenden

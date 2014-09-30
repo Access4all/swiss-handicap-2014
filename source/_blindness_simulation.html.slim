@@ -35,5 +35,10 @@
 
             .controls
               button.btn.btn-success.btn-lg data-target="#blindness_resolution" data-toggle="modal" Ja
-              button.btn.btn-danger.btn-lg data-bind="click: answer, visible: hasNext" Nein, nächster Versuch
-              button.btn.btn-danger.btn-lg data-bind="visible: !hasNext()" data-target="#blindness_resolution" data-toggle="modal" Nein, leider immer noch nicht
+              button.btn.btn-danger.btn-lg data-bind="click: next, visible: hasNext" Nein, bitte langsamer!
+              button.btn.btn-danger.btn-lg data-bind="visible: !hasNext()" data-target="#blindness_resolution" data-toggle="modal" Nein, zeige Lösung!
+
+        .row
+          .col-md-12
+            hr
+              button.btn.btn-info.restart onclick="window.location.reload()" Zur Startseite

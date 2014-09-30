@@ -1,0 +1,56 @@
+#motivity_simulation.modal.fade tabindex="-1" data-keyboard="false" data-backdrop="static"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close data-dismiss="modal" type="button"
+        h4#modal-title
+          .fa.fa-wheelchair
+          | &nbsp;Geben Sie <code>Postfinance</code> mit einem Mundstab ein!
+
+      .modal-body
+        .row
+          .col-md-6
+            .form-horizontal
+              .form-group
+                label.col-sm-3.control-label for="address" Eingabe
+                .col-sm-9
+                  input#address.form-control type="text" required="required" value="" data-bind="value: address, valueUpdate:'textchange', event: { textchange: startCountdown }"
+
+            #timer data-bind="visible: !gameOver()"
+              | Verbleibende Zeit:&nbsp;
+              <!--ko text: currentLimit()--><!--/ko-->
+              |&nbsp;Sekunden
+
+          .col-md-6
+            / = image_tag 'postfinance_ad.jpg', class: 'img-rounded'
+            table.table.table-bordered
+              tbody
+                tr
+                  th Versuchsnummer
+                  td
+                    .badge.alert-success
+                      <!--ko text: currentAttempt()--><!--/ko-->
+                      |&nbsp;von&nbsp;
+                      <!--ko text: totalAttempts()--><!--/ko-->
+
+                tr
+                  th Aktuelles Zeitlimit
+                  td
+                    span#current_limit
+                    |&nbsp; Sekunden
+
+        .row
+          .col-md-12
+            .alert.alert-info data-bind="visible: infoMsg(), text: infoMsg()"
+            .alert.alert-danger data-bind="visible: failureMsg(), text: failureMsg()"
+
+        .controls data-bind="visible: inputComplete()"
+          button.btn.btn-success.btn-lg data-target="#motivity_resolution" data-toggle="modal" Bravo! Weiter zum Lösungswort.
+
+        .controls data-bind="visible: gameOver()"
+          button.btn.btn-success.btn-lg data-target="#motivity_resolution" data-toggle="modal" Trotzdem weiter zum Lösungswort, bitte.
+
+        .row
+          .col-md-12
+            hr
+              button.btn.btn-info.restart onclick="window.location.reload()" Zur Startseite

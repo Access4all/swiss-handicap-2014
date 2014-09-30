@@ -8,75 +8,86 @@
           | &nbsp;Wählen Sie an jedem Tag einen freien Termin aus!
 
       .modal-body
-        p
-          | Klicken Sie auf einen freien Termin (
-          em.free grün
-          |), um ihn anzuwählen.
+        .row
+          .col-md-12
+            p Der nachfolgende Kalender ist farbcodiert. Um Farbenblindheit zu simulieren, wird er hier aber nur in Graustufen angezeigt.
 
-        table#calendar.table.table-bordered
-          thead
-            tr
-              th
-              th 9:00
-              th 10:00
-              th 11:00
-              th 13:00
-              th 14:00
-              th 15:00
-              th 16:00
-              th 17:00
+            p
+              | Klicken Sie auf einen freien Termin (
+              em.free grün
+              |), um ihn anzuwählen.
 
-          tbody
-            tr
-              th Montag
-              td.occupied
-              td
-              td.occupied
-              td
-              td
-              td.occupied
-              td.not_available
-              td.not_available
-            tr
-              th Dienstag
-              td
-              td.occupied
-              td.occupied
-              td
-              td
-              td.occupied
-              td
-              td.occupied
-            tr
-              th Mittwoch
-              td.occupied
-              td.not_available
-              td
-              td
-              td.occupied
-              td.not_available
-              td.occupied
-              td
-            tr
-              th Donnerstag
-              td
-              td
-              td.occupied
-              td.occupied
-              td.not_available
-              td.occupied
-              td
-              td.not_available
-            tr
-              th Freitag
-              td
-              td.occupied
-              td.not_available
-              td.occupied
-              td
-              td.occupied
-              td
-              td.not_available
+            p Um es etwas einfacher zu machen, erhalten angeklickte Zellen ihre ursprüngliche Farbe zurück.
 
-        .controls data-bind="visible: toOccupyCount() == 5"
-          button.btn.btn-success.btn-lg data-target="#colorblindness_resolution" data-toggle="modal" Bravo! Weiter zum Lösungswort.
+            table#calendar.table.table-bordered
+              thead
+                tr
+                  th
+                  th 9:00
+                  th 10:00
+                  th 11:00
+                  th 13:00
+                  th 14:00
+                  th 15:00
+                  th 16:00
+                  th 17:00
+
+              tbody
+                tr
+                  th Montag
+                  td.occupied
+                  td
+                  td.occupied
+                  td
+                  td
+                  td.occupied
+                  td.not_available
+                  td.not_available
+                tr
+                  th Dienstag
+                  td
+                  td.occupied
+                  td.occupied
+                  td
+                  td
+                  td.occupied
+                  td
+                  td.occupied
+                tr
+                  th Mittwoch
+                  td.occupied
+                  td.not_available
+                  td
+                  td
+                  td.occupied
+                  td.not_available
+                  td.occupied
+                  td
+                tr
+                  th Donnerstag
+                  td
+                  td
+                  td.occupied
+                  td.occupied
+                  td.not_available
+                  td.occupied
+                  td
+                  td.not_available
+                tr
+                  th Freitag
+                  td
+                  td.occupied
+                  td.not_available
+                  td.occupied
+                  td
+                  td.occupied
+                  td
+                  td.not_available
+
+            .controls data-bind="visible: toOccupyCount() == 5"
+              button.btn.btn-success.btn-lg data-target="#colorblindness_resolution" data-toggle="modal" Bravo! Weiter zum Lösungswort.
+
+        .row
+          .col-md-12
+            hr
+              button.btn.btn-info.restart onclick="window.location.reload()" Zur Startseite

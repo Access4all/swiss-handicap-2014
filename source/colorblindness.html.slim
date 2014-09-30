@@ -2,34 +2,13 @@ h1
   .fa.fa-photo
   | &nbsp;Welche Probleme stellen sich Farbenblinden?
 
-p Nicht nur im Internet, sondern überall im Alltag stellen Hinweise, die nur farblich erkennbar sind, Farbenblinde vor erhebliche Probleme. Aus diesem Grunde sind beispielsweise Ampeln bei Fussgängerstreifen nicht nur rot und grün codiert, sondern auch mittels klar erkennbarer Symbole (stehende / gehende Person).
-
 .row
-  .col-md-8
-    h2 Aufgabe
-
-    p Für eine komplizierte anstehende Arztkonsultation müssen Sie während einer Woche täglich einen freien Termin im Kalender Ihres Arztes auswählen.
+  .col-md-12
+    p Überall im Alltag stellen Hinweise, die nur farblich erkennbar sind, Farbenblinde vor erhebliche Probleme.
 
     .alert.alert-success
       strong Das Ziel:
-      | &nbsp;Wählen Sie an jedem Tag einen freien Termin im Kalender aus! Sobald Sie dies geschafft haben, erhalten Sie das Lösungswort.
-
-    p Die Termine sind farbcodiert:
-
-    ul
-      li
-        em.occupied&nbsp;rote Termine
-        |&nbsp;sind besetzt
-
-      li
-        em.not_available&nbsp;graue Termine
-        |&nbsp;sind nicht verfügbar
-
-      li
-        em.free&nbsp;grüne Termine
-        |&nbsp;sind frei
-
-    p Hinweis: Sobald die Simulation gestartet wird, wechselt die Ansicht von farbig zu schwarz-weiss!
+      | &nbsp;Wählen Sie im Kalender nachfolgend angezeigten Kalender an jedem Tag einen freien Termin aus!
 
     .controls
       button.btn.btn-danger.btn-lg data-target="#colorblindness_simulation" data-toggle="modal"
@@ -39,18 +18,3 @@ p Nicht nur im Internet, sondern überall im Alltag stellen Hinweise, die nur fa
     = render_partial 'colorblindness_simulation'
 
     = render_partial 'colorblindness_resolution'
-
-  .col-md-4
-    .well
-      h2
-        .fa.fa-list-alt
-        | &nbsp;Fakten
-
-      ul
-        li ??% der Menschen sind blind
-        li
-          | ??% der Menschen sind stark sehbehindert
-
-          ul
-            li davon ??% unter 30 Jahren
-            li davon ??% über 60 Jahren

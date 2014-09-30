@@ -3,24 +3,27 @@
     .modal-content
       .modal-header
         button.close data-dismiss="modal" type="button"
-        h3#modal-title Eine bekannte farbenblinde Persönlichkeit: Paul Newman
+        h3#modal-title Farben alleine reichen nicht!
 
       .modal-body
         .row
           .col-md-12
-            .alert.alert-success Notieren Sie "Pilot" als Lösungswort!
+            h4 Wie man farbenunabhängig Information vermitteln kann
 
         .row
-          .col-md-8
-            h4 Warum Paul Newman nicht Pilot werden konnte
+          .col-md-5
 
             markdown:
-              Paul Newman wurde 1925 in Shaker Heights, Ohio, geboren. Bereits in jungen Jahren sammelte er erste schauspielerische Erfahrungen an einem Kindertheater in Cleveland.
-              
-              1943 meldete er sich freiwillig zur US Navy, um Pilot zu werden. Da er auf Grund seiner Farbenblindheit nicht geeignet war, ein Flugzeug zu steuern, leistete er drei Jahre Dienst als Funker an Bord eines Torpedobombers im pazifischen Raum.
+              Da Farben nicht von allen Menschen gleich wahrgenommen werden können, sollte Information nie nur durch Farben codiert sein.
 
-          .col-md-4
-            = image_tag 'newman.jpg', class: 'img-rounded'
+              Stattdessen bietet sich eine Kombination von Farbe mit einem klar erkennbaren und interpretierbaren Symbol an.
+
+          .col-md-7
+            = image_tag 'calendar_with_symbols.jpg'
+
+        .row
+          .col-md-12
+            .alert.alert-success Notieren Sie "Symbol" als Lösungswort!
 
         .row
           .col-md-12
