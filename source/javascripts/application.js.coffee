@@ -5,7 +5,6 @@
 //= require blindness
 //= require colorblindness
 //= require motivity
-//= require seniority
 
 $ ->
   # Hide opened modals when opening another modal
