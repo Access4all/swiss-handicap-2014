@@ -37,31 +37,7 @@ h1 Willkommen zum Handicap Simulator!
 .controls
   p = link_to 'Alternative Version für Blinde', 'alternative.html'
 
-  button.btn.btn-danger.btn-lg data-target="#contest" data-toggle="modal"
+  = link_to 'blindness.html', class: 'btn btn-danger btn-lg' do
     span.fa.fa-play
     | &nbsp;Simulation starten
 
-#contest.modal.fade tabindex="-1" data-keyboard="false" data-backdrop="static"
-  .modal-dialog
-    .modal-content
-      .modal-header
-        button.close data-dismiss="modal" type="button"
-        h4#modal-title Gewinnen Sie ein iPad!
-
-      .modal-body
-        .row
-          .col-md-7
-            p Nehmen Sie Ihre Chance wahr, und gewinnen Sie ein iPad der neusten Generation!
-
-            ul
-              li Jede der vier Simulationen hält ein Lösungswort bereit.
-              li Schreiben Sie diese auf Ihre Teilnahmekarte.
-              li Melden Sie sich nach Ende der Simulationen bei uns, um bei der Verlosung Teil zu nehmen.
-
-            p Viel Glück!
-
-          .col-md-5
-            = image_tag 'ipad.jpg'
-
-      .modal-footer
-        a.btn.btn-danger href="blindness.html" Weiter zu Simulation 1
