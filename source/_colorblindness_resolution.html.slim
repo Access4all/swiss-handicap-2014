@@ -1,5 +1,5 @@
 #colorblindness_resolution.modal.fade tabindex="-1" data-keyboard="false" data-backdrop="static"
-  .modal-dialog
+  .modal-dialog.modal-lg
     .modal-content
       .modal-header
         button.close data-dismiss="modal" type="button"
@@ -11,15 +11,15 @@
             h4 Wie man farbenunabhängig Information vermitteln kann
 
         .row
-          .col-md-5
+          .col-md-7
 
             markdown:
-              Da Farben nicht von allen Menschen gleich wahrgenommen werden können, sollte Information nie nur durch Farben codiert sein.
+              Da Farben nicht von allen Menschen gleich wahrgenommen werden können, sollten Informationen nie nur durch Farben codiert sein.
 
               Stattdessen bietet sich eine Kombination von Farbe mit einem klar erkennbaren und interpretierbaren Symbol an.
 
-          .col-md-7
-            = image_tag 'calendar_with_symbols.jpg'
+          .col-md-5
+            p = image_tag 'calendar_with_symbols.jpg'
 
         .row
           .col-md-12

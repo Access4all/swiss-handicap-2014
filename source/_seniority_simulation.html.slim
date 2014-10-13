@@ -1,5 +1,5 @@
 #seniority_simulation.modal.fade tabindex="-1" data-keyboard="false" data-backdrop="static"
-  .modal-dialog
+  .modal-dialog.modal-lg
     .modal-content
       .modal-header
         button.close data-dismiss="modal" type="button"
@@ -21,20 +21,20 @@
 
               .carousel-inner
                 .item.active
-                  = image_tag 'retinopathia_pigmentosa.jpg'
-                  .title Röhrenblick
-
-                .item
                   = image_tag 'macular_degeneration.jpg'
                   .title Makuladegeneration
 
                 .item
-                  = image_tag 'cataract.jpg'
-                  .title Grüner Star
+                  = image_tag 'myopia.jpg'
+                  .title Weitsichtigkeit
 
                 .item
-                  = image_tag 'myopia.jpg'
-                  .title Kurzsichtigkeit
+                  = image_tag 'retinopathia_pigmentosa.jpg'
+                  .title Röhrenblick
+
+                .item.active
+                  = image_tag 'diabetic_retinopaty.jpg'
+                  .title Diabetische Retinopathie
 
               a.left.carousel-control data-slide="prev" href="#seniority_carousel" role="button"
                 span.glyphicon.glyphicon-chevron-left
