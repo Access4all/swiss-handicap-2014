@@ -10,64 +10,62 @@
       .modal-body
         .row
           .col-md-12
-            p Der nachfolgende Kalender ist farbcodiert. Um Farbenblindheit zu simulieren, wird er hier aber nur in Graustufen angezeigt.
+            p Versuchen Sie, pro Tag einen freien Termin zu finden, indem Sie auf die Tabellenzelle klicken.
+
+            p
+              em Der nachfolgende Kalender ist farbcodiert. Um Farbenblindheit zu simulieren, wird er hier aber nur in Graustufen angezeigt.
 
             table#calendar.table.table-bordered
               thead
                 tr
                   th
-                  th 9:00
-                  th 10:00
-                  th 11:00
-                  th 13:00
-                  th 14:00
-                  th 15:00
-                  th 16:00
-                  th 17:00
+                  th Montag
+                  th Dienstag
+                  th Mittwoch
+                  th Donnerstag
+                  th Freitag
+                  th Samstag
+                  th Sonntag
 
               tbody
                 tr
-                  th Montag
+                  th 9:00
                   td.occupied
                   td
                   td.occupied
                   td
                   td
                   td.occupied
-                  td.not_available
                   td.not_available
                 tr
-                  th Dienstag
+                  th 10:00
                   td
                   td.occupied
                   td.occupied
                   td
                   td
-                  td.occupied
-                  td
-                  td.occupied
-                tr
-                  th Mittwoch
-                  td.occupied
-                  td.not_available
-                  td
-                  td
-                  td.occupied
-                  td.not_available
                   td.occupied
                   td
                 tr
-                  th Donnerstag
-                  td
-                  td
+                  th 11:00
                   td.occupied
+                  td.not_available
+                  td
+                  td
                   td.occupied
                   td.not_available
                   td.occupied
-                  td
-                  td.not_available
                 tr
-                  th Freitag
+                  th 14:00
+                  td
+                  td
+                  td.occupied
+                  td.occupied
+                  td.not_available
+                  td.occupied
+                  td
+                tr
+                  th 15:00
                   td
                   td.occupied
                   td.not_available
@@ -75,9 +73,17 @@
                   td
                   td.occupied
                   td
+                tr
+                  th 16:00
+                  td
                   td.not_available
+                  td.not_available
+                  td.occupied
+                  td.occupied
+                  td
+                  td.occupied
 
-            .controls data-bind="visible: toOccupyCount() == 5"
+            .controls data-bind="visible: toOccupyCount() == numberOfRequiredFreeSelectedSlots"
               button.btn.btn-success.btn-lg data-target="#colorblindness_resolution" data-toggle="modal" Bravo! Weiter zum Lösungswort.
 
         .row

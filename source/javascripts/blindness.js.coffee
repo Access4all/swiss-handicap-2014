@@ -9,6 +9,8 @@ class BlindnessViewModel
     @totalAttempts = ->
       @audios.length
 
+    @playCaption = ko.observable('Abspielen')
+
     @chooseAnswer = ko.observable(false)
 
     @audios = [
@@ -36,6 +38,7 @@ class BlindnessViewModel
       @chooseAnswer(false)
       @player.addEventListener 'ended', (=>
         @chooseAnswer(true)
+        @playCaption('Erneut abspielen')
       ), false
 
     @next()

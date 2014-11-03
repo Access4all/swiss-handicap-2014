@@ -20,7 +20,7 @@ html
               span.icon-bar
               span.icon-bar
               span.icon-bar
-            a.navbar-brand href="/" class=nav_active('index')
+            a.navbar-brand href="/" class=nav_active('index') alt=""
               .fa.fa-wheelchair
               | &nbsp;Handicap Simulator
 
@@ -46,14 +46,13 @@ html
                   .fa.fa-bullhorn
                   | &nbsp;Altersschwäche
 
+          = image_tag 'postfinance.jpg', class: 'postfinance img-rounded'
+
     main.container[role="main"]
       .row
         .col-md-12
-          h1 = current_page.data.title
-
           = yield
 
-    .footer
+    footer
       .container
-        = image_tag 'postfinance.jpg', class: 'postfinance img-rounded'
-        = image_tag 'access4all.gif', class: 'access4all img-rounded'
+        = image_tag 'access4all.gif', class: 'access4all img-rounded', alt: ''
