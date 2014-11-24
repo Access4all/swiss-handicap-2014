@@ -1,17 +1,19 @@
 class ColorblindnessViewModel
   constructor: ->
     @toOccupyCount = ko.observable(0)
+    @numberOfRequiredFreeSelectedSlots = 7
 
     $('td').click (e) =>
       $(e.target).removeClass('grayscale')
 
     $('td:not(.occupied, .not_available)').click (e) =>
       $target = $(e.target)
-      if $target.parent().find('.to_occupy').length == 0
+
+      if $target.closest('tbody').find("td:nth-of-type(#{$target.index()}).to_occupy").length == 0
         $target.addClass('to_occupy')
         @toOccupyCount(@toOccupyCount() + 1)
 
-        if @toOccupyCount() == 5
+        if @toOccupyCount() == @numberOfRequiredFreeSelectedSlots
           $('.grayscale').removeClass('grayscale')
 
 $ ->

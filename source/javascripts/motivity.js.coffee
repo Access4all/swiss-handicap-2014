@@ -30,14 +30,14 @@ class MotivityViewModel
       @address() == ''
 
     @inputComplete = =>
-      return if @address() == 'Postfinance'
+      return if @address().toLowerCase() == 'postfinance'
                 @countdownRunning = false
                 true
               else
                 false
 
     @inputOkay = =>
-      if "Postfinance".indexOf(@address()) == 0
+      if 'postfinance'.indexOf(@address().toLowerCase()) == 0
       else
         false
 
