@@ -38,10 +38,16 @@ footer
   bottom: 10px
   width: 100%
 
-  img.access4all
+  img
     height: 50px
-    border: 5px solid #fff
     outline: 1px solid $text-color
+
+    &.access4all
+      border: 5px solid #fff
+      +float-right
+
+    &.postfinance
+      +float-left
 
 .navbar
   .navbar-brand.active
