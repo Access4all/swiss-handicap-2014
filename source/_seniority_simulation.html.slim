@@ -9,10 +9,7 @@
 
       .modal-body
         .row
-          .col-md-12
-            markdown:
-              Schauen Sie sich die **vier unterschiedlichen Simulationen** an und versuchen Sie, das angezeigte Wort zu erkennen.
-
+          .col-md-7
             #seniority_carousel.carousel.slide data-ride="carousel"
               ol.carousel-indicators
                 li.active data-slide-to="0" data-target="#seniority_carousel"
@@ -42,8 +39,14 @@
               a.right.carousel-control data-slide="next" href="#seniority_carousel" role="button"
                 span.glyphicon.glyphicon-chevron-right
 
+          .col-md-5.instruction
+            markdown:
+              Schauen Sie sich die **vier unterschied-lichen Simulationen** an.
+              
+              Versuchen Sie, das angezeigte Wort zu erkennen.
+
           .controls
-            button.btn.btn-success.btn-lg data-target="#seniority_resolution" data-toggle="modal" Wort erkannt!
+            button.btn.btn-success.btn-lg.word-recognised data-target="#seniority_resolution" data-toggle="modal" Wort erkannt!
 
         .row
           .col-md-12
