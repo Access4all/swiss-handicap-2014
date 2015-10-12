@@ -1,6 +1,6 @@
-# Swiss Handicap 2014 Simulator
+# Swiss Handicap 2015 Simulator
 
-&copy;2014 [Zugang für alle](http://www.access-for-all.ch).
+&copy;2015 [Zugang für alle](http://www.access-for-all.ch).
 
 This project is based on the [Middleman](http://middlemanapp.com/) gem.
 

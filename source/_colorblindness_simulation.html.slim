@@ -10,10 +10,16 @@
       .modal-body
         .row
           .col-md-12
-            p Versuchen Sie, pro Tag einen freien Termin zu finden, indem Sie auf die Tabellenzelle klicken.
+            p: em Der nachfolgende Kalender ist farbcodiert:
 
-            p
-              em Der nachfolgende Kalender ist farbcodiert. Um Farbenblindheit zu simulieren, wird er hier aber nur in Graustufen angezeigt.
+            ul
+              li.available     Freie Termine sind <em class="free">grün hinterlegt</em>
+              li.occupied      Besetzte Termine sind <em class="occupied">rot hinterlegt</em>
+              li.not_available Nicht verfügbare Termine sind <em class="not_available">blau hinterlegt</em>
+
+            p Um Farbenblindheit zu simulieren, wird der Kalender hier aber nur in Graustufen angezeigt.
+
+            p Versuchen Sie, pro Tag (Montag bis Sonntag) einen freien Termin (zwischen 9:00 und 16:00) zu finden, indem Sie auf die Tabellenzelle klicken.
 
             table#calendar.table.table-bordered
               thead
