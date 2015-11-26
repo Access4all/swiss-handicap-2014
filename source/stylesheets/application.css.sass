@@ -70,7 +70,7 @@ body.index
   position: relative
 
   main
-    a
+    a.task
       color: $text-color
 
       &:hover
@@ -187,3 +187,8 @@ body.alternative
 
 .btn.restart
   +float-right
+
+
+// Fixes zoom problem when opening a dialog on iOS, see https://github.com/jschr/bootstrap-modal/issues/64#issuecomment-55794181
+.modal-open
+  overflow-y: auto

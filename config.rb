@@ -80,9 +80,9 @@ set :relative_links, true # In case we don't deploy to the root of a server
 
 activate :deploy do |deploy|
   deploy.method       = :ftp
-  deploy.host         = 'swiss-handicap-standalone.access-for-all.ch'
   deploy.branch       = 'master-2015'
   deploy.path         = '/'
+  deploy.host         = 'swiss-handicap.access-for-all.ch'
   deploy.user         = 'josh'
   deploy.password     = 'nMqgnFWpX7MPJJKGqcfX'
   deploy.build_before = true
